@@ -1,0 +1,33 @@
+/* Spacehole Event Horizon — Vacío y disco de acreción
+   Generado desde palette/tokens.json. No editar a mano. */
+[data-theme="spacehole-event-horizon"] {
+  color-scheme: dark;
+  --sh-bg: #0B0E14; /* vacío */
+  --sh-bg-alt: #131822; /* superficie */
+  --sh-bg-elevated: #1A2130; /* elevado */
+  --sh-selection: #24304A; /* captura */
+  --sh-border: #1F2733; /* límite */
+  --sh-muted: #7C8798; /* polvo */
+  --sh-subtext: #9BA6B8; /* halo */
+  --sh-fg: #C9D1E0; /* luz estelar */
+  --sh-fg-bright: #EAF0FA; /* destello */
+  --sh-keyword: #F2A65A; /* acreción */
+  --sh-function: #5FD3D8; /* jets */
+  --sh-string: #9ECE6A; /* gas frío */
+  --sh-constant: #A78BFA; /* nebulosa */
+  --sh-type: #F2D08A; /* corona */
+  --sh-operator: #E8B98A; /* flujo */
+  --sh-error: #F26D7D; /* redshift */
+  --sh-warning: #F2C14E; /* alerta */
+  --sh-success: #9ECE6A; /* estable */
+  --sh-info: #5FD3D8; /* señal */
+
+  --sh-ansi-black: #131822;
+  --sh-ansi-red: #F26D7D;
+  --sh-ansi-green: #9ECE6A;
+  --sh-ansi-yellow: #F2C14E;
+  --sh-ansi-blue: #7AA2F7;
+  --sh-ansi-magenta: #A78BFA;
+  --sh-ansi-cyan: #5FD3D8;
+  --sh-ansi-white: #C9D1E0;
+}

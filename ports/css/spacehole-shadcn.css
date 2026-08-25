@@ -1,0 +1,388 @@
+/* Spacehole — generado desde palette/tokens.json. No editar a mano.
+   https://spacehole.tech */
+
+@custom-variant dark (&:is([data-theme="hawking"] *, [data-theme="event-horizon"] *, [data-theme="deep-void"] *, [data-theme="background-radiation"] *));
+
+/* Hawking — Radiación neón sobre vacío */
+[data-theme="hawking"] {
+  color-scheme: dark;
+
+  --sh-bg: #000000; /* singularidad */
+  --sh-bg-alt: #0D0714; /* superficie */
+  --sh-bg-elevated: #160C21; /* elevado */
+  --sh-selection: #2E1A42; /* captura */
+  --sh-border: #241633; /* límite */
+  --sh-muted: #8873A4; /* polvo */
+  --sh-subtext: #B7A6CC; /* halo */
+  --sh-fg: #E8E0F0; /* emisión */
+  --sh-fg-bright: #FFFFFF; /* destello */
+  --sh-keyword: #FF2E97; /* radiación */
+  --sh-function: #00F0FF; /* horizonte */
+  --sh-string: #00FF9C; /* plasma */
+  --sh-constant: #C77BFF; /* cuántico */
+  --sh-type: #FFD426; /* fotón */
+  --sh-operator: #FF6FC0; /* flujo */
+  --sh-error: #FF4D6D; /* colapso */
+  --sh-warning: #FFD426; /* alerta */
+  --sh-success: #00FF9C; /* estable */
+  --sh-info: #00F0FF; /* señal */
+
+  --background: #000000;
+  --foreground: #E8E0F0;
+  --card: #0D0714;
+  --card-foreground: #E8E0F0;
+  --popover: #160C21;
+  --popover-foreground: #E8E0F0;
+  --primary: #FF2E97;
+  --primary-foreground: #000000;
+  --secondary: #0D0714;
+  --secondary-foreground: #E8E0F0;
+  --muted: #0D0714;
+  --muted-foreground: #8873A4;
+  --accent: #FF2E97;
+  --accent-foreground: #000000;
+  --destructive: #FF4D6D;
+  --destructive-foreground: #000000;
+  --border: #241633;
+  --input: #241633;
+  --ring: #FF2E97;
+  --chart-1: #FF2E97;
+  --chart-2: #00F0FF;
+  --chart-3: #00FF9C;
+  --chart-4: #C77BFF;
+  --chart-5: #FFD426;
+  --sidebar: #0D0714;
+  --sidebar-foreground: #E8E0F0;
+  --sidebar-primary: #FF2E97;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #160C21;
+  --sidebar-accent-foreground: #E8E0F0;
+  --sidebar-border: #241633;
+  --sidebar-ring: #FF2E97;
+}
+
+/* Event Horizon — Vacío y disco de acreción */
+[data-theme="event-horizon"] {
+  color-scheme: dark;
+
+  --sh-bg: #0B0E14; /* vacío */
+  --sh-bg-alt: #131822; /* superficie */
+  --sh-bg-elevated: #1A2130; /* elevado */
+  --sh-selection: #24304A; /* captura */
+  --sh-border: #1F2733; /* límite */
+  --sh-muted: #7C8798; /* polvo */
+  --sh-subtext: #9BA6B8; /* halo */
+  --sh-fg: #C9D1E0; /* luz estelar */
+  --sh-fg-bright: #EAF0FA; /* destello */
+  --sh-keyword: #F2A65A; /* acreción */
+  --sh-function: #5FD3D8; /* jets */
+  --sh-string: #9ECE6A; /* gas frío */
+  --sh-constant: #A78BFA; /* nebulosa */
+  --sh-type: #F2D08A; /* corona */
+  --sh-operator: #E8B98A; /* flujo */
+  --sh-error: #F26D7D; /* redshift */
+  --sh-warning: #F2C14E; /* alerta */
+  --sh-success: #9ECE6A; /* estable */
+  --sh-info: #5FD3D8; /* señal */
+
+  --background: #0B0E14;
+  --foreground: #C9D1E0;
+  --card: #131822;
+  --card-foreground: #C9D1E0;
+  --popover: #1A2130;
+  --popover-foreground: #C9D1E0;
+  --primary: #F2A65A;
+  --primary-foreground: #0B0E14;
+  --secondary: #131822;
+  --secondary-foreground: #C9D1E0;
+  --muted: #131822;
+  --muted-foreground: #7C8798;
+  --accent: #F2A65A;
+  --accent-foreground: #0B0E14;
+  --destructive: #F26D7D;
+  --destructive-foreground: #0B0E14;
+  --border: #1F2733;
+  --input: #1F2733;
+  --ring: #F2A65A;
+  --chart-1: #F2A65A;
+  --chart-2: #5FD3D8;
+  --chart-3: #9ECE6A;
+  --chart-4: #A78BFA;
+  --chart-5: #F2D08A;
+  --sidebar: #131822;
+  --sidebar-foreground: #C9D1E0;
+  --sidebar-primary: #F2A65A;
+  --sidebar-primary-foreground: #0B0E14;
+  --sidebar-accent: #1A2130;
+  --sidebar-accent-foreground: #C9D1E0;
+  --sidebar-border: #1F2733;
+  --sidebar-ring: #F2A65A;
+}
+
+/* Deep Void — Monocromo frío con un solo acento */
+[data-theme="deep-void"] {
+  color-scheme: dark;
+
+  --sh-bg: #080A0F; /* vacío */
+  --sh-bg-alt: #10141C; /* superficie */
+  --sh-bg-elevated: #161C26; /* elevado */
+  --sh-selection: #223046; /* captura */
+  --sh-border: #1A2029; /* límite */
+  --sh-muted: #757F8E; /* polvo */
+  --sh-subtext: #93A0B0; /* halo */
+  --sh-fg: #B8C0CC; /* niebla */
+  --sh-fg-bright: #DDE4EC; /* destello */
+  --sh-keyword: #7DD3FC; /* hielo */
+  --sh-function: #A9B6C6; /* escala 1 */
+  --sh-string: #8492A4; /* escala 2 */
+  --sh-constant: #6C7A8C; /* escala 3 */
+  --sh-type: #9FC4DC; /* escarcha */
+  --sh-operator: #8FA3B8; /* flujo */
+  --sh-error: #E88796; /* alarma */
+  --sh-warning: #D9B88A; /* aviso */
+  --sh-success: #8FBF9F; /* estable */
+  --sh-info: #7DD3FC; /* señal */
+
+  --background: #080A0F;
+  --foreground: #B8C0CC;
+  --card: #10141C;
+  --card-foreground: #B8C0CC;
+  --popover: #161C26;
+  --popover-foreground: #B8C0CC;
+  --primary: #7DD3FC;
+  --primary-foreground: #080A0F;
+  --secondary: #10141C;
+  --secondary-foreground: #B8C0CC;
+  --muted: #10141C;
+  --muted-foreground: #757F8E;
+  --accent: #7DD3FC;
+  --accent-foreground: #080A0F;
+  --destructive: #E88796;
+  --destructive-foreground: #080A0F;
+  --border: #1A2029;
+  --input: #1A2029;
+  --ring: #7DD3FC;
+  --chart-1: #7DD3FC;
+  --chart-2: #A9B6C6;
+  --chart-3: #8492A4;
+  --chart-4: #6C7A8C;
+  --chart-5: #9FC4DC;
+  --sidebar: #10141C;
+  --sidebar-foreground: #B8C0CC;
+  --sidebar-primary: #7DD3FC;
+  --sidebar-primary-foreground: #080A0F;
+  --sidebar-accent: #161C26;
+  --sidebar-accent-foreground: #B8C0CC;
+  --sidebar-border: #1A2029;
+  --sidebar-ring: #7DD3FC;
+}
+
+/* Background Radiation — Cinta analógica, estática cósmica */
+:root,
+[data-theme="background-radiation"] {
+  color-scheme: dark;
+
+  --sh-bg: #14101A; /* cinta */
+  --sh-bg-alt: #1D1826; /* superficie */
+  --sh-bg-elevated: #262034; /* elevado */
+  --sh-selection: #3A2F4E; /* captura */
+  --sh-border: #2E2740; /* límite */
+  --sh-muted: #8F84A3; /* ruido */
+  --sh-subtext: #ADA2C0; /* halo */
+  --sh-fg: #D8D0E0; /* señal */
+  --sh-fg-bright: #F0EAF7; /* destello */
+  --sh-keyword: #E07BAE; /* chroma */
+  --sh-function: #6FCEDE; /* tracking */
+  --sh-string: #8FD9A0; /* fósforo */
+  --sh-constant: #E0B072; /* ámbar */
+  --sh-type: #C9A0E0; /* scanline */
+  --sh-operator: #D69AC0; /* flujo */
+  --sh-error: #E08494; /* dropout */
+  --sh-warning: #E0B072; /* aviso */
+  --sh-success: #8FD9A0; /* estable */
+  --sh-info: #6FCEDE; /* sync */
+
+  --background: #14101A;
+  --foreground: #D8D0E0;
+  --card: #1D1826;
+  --card-foreground: #D8D0E0;
+  --popover: #262034;
+  --popover-foreground: #D8D0E0;
+  --primary: #E07BAE;
+  --primary-foreground: #14101A;
+  --secondary: #1D1826;
+  --secondary-foreground: #D8D0E0;
+  --muted: #1D1826;
+  --muted-foreground: #8F84A3;
+  --accent: #E07BAE;
+  --accent-foreground: #14101A;
+  --destructive: #E08494;
+  --destructive-foreground: #14101A;
+  --border: #2E2740;
+  --input: #2E2740;
+  --ring: #E07BAE;
+  --chart-1: #E07BAE;
+  --chart-2: #6FCEDE;
+  --chart-3: #8FD9A0;
+  --chart-4: #E0B072;
+  --chart-5: #C9A0E0;
+  --sidebar: #1D1826;
+  --sidebar-foreground: #D8D0E0;
+  --sidebar-primary: #E07BAE;
+  --sidebar-primary-foreground: #14101A;
+  --sidebar-accent: #262034;
+  --sidebar-accent-foreground: #D8D0E0;
+  --sidebar-border: #2E2740;
+  --sidebar-ring: #E07BAE;
+}
+
+/* Photon Sphere — Luz atrapada en órbita */
+[data-theme="photon-sphere"] {
+  color-scheme: light;
+
+  --sh-bg: #DCD7C9; /* órbita */
+  --sh-bg-alt: #D0CABA; /* superficie */
+  --sh-bg-elevated: #E6E2D8; /* elevado */
+  --sh-selection: #C2BBA6; /* captura */
+  --sh-border: #BCB5A3; /* límite */
+  --sh-muted: #545D60; /* sombra */
+  --sh-subtext: #3E484B; /* penumbra */
+  --sh-fg: #2C3639; /* slate */
+  --sh-fg-bright: #1A2224; /* tinta */
+  --sh-keyword: #7A4E27; /* copper */
+  --sh-function: #1F5F66; /* teal */
+  --sh-string: #42611F; /* olivo */
+  --sh-constant: #5E3A7A; /* ciruela */
+  --sh-type: #2A4C7A; /* cobalto */
+  --sh-operator: #6B4A2A; /* flujo */
+  --sh-error: #8F2F2F; /* ladrillo */
+  --sh-warning: #6F5313; /* aviso */
+  --sh-success: #42611F; /* estable */
+  --sh-info: #1F5F66; /* señal */
+
+  --background: #DCD7C9;
+  --foreground: #2C3639;
+  --card: #D0CABA;
+  --card-foreground: #2C3639;
+  --popover: #E6E2D8;
+  --popover-foreground: #2C3639;
+  --primary: #7A4E27;
+  --primary-foreground: #DCD7C9;
+  --secondary: #D0CABA;
+  --secondary-foreground: #2C3639;
+  --muted: #D0CABA;
+  --muted-foreground: #545D60;
+  --accent: #7A4E27;
+  --accent-foreground: #DCD7C9;
+  --destructive: #8F2F2F;
+  --destructive-foreground: #DCD7C9;
+  --border: #BCB5A3;
+  --input: #BCB5A3;
+  --ring: #7A4E27;
+  --chart-1: #7A4E27;
+  --chart-2: #1F5F66;
+  --chart-3: #42611F;
+  --chart-4: #5E3A7A;
+  --chart-5: #2A4C7A;
+  --sidebar: #D0CABA;
+  --sidebar-foreground: #2C3639;
+  --sidebar-primary: #7A4E27;
+  --sidebar-primary-foreground: #DCD7C9;
+  --sidebar-accent: #E6E2D8;
+  --sidebar-accent-foreground: #2C3639;
+  --sidebar-border: #BCB5A3;
+  --sidebar-ring: #7A4E27;
+}
+
+/* White Dwarf — Carbono cristalizado, luz fría */
+[data-theme="white-dwarf"] {
+  color-scheme: light;
+
+  --sh-bg: #F6F8FB; /* enana */
+  --sh-bg-alt: #EBEFF5; /* superficie */
+  --sh-bg-elevated: #FFFFFF; /* elevado */
+  --sh-selection: #D3E0F5; /* captura */
+  --sh-border: #D5DCE6; /* límite */
+  --sh-muted: #5C6675; /* sombra */
+  --sh-subtext: #3A4350; /* penumbra */
+  --sh-fg: #171C24; /* carbono */
+  --sh-fg-bright: #000000; /* núcleo */
+  --sh-keyword: #6D28D9; /* degeneración */
+  --sh-function: #0E7C86; /* espectro */
+  --sh-string: #2F7A2F; /* emisión */
+  --sh-constant: #B45309; /* corona */
+  --sh-type: #7C3AAD; /* absorción */
+  --sh-operator: #455467; /* flujo */
+  --sh-error: #B3261E; /* colapso */
+  --sh-warning: #96660A; /* aviso */
+  --sh-success: #2F7A2F; /* estable */
+  --sh-info: #0E7C86; /* señal */
+
+  --background: #F6F8FB;
+  --foreground: #171C24;
+  --card: #EBEFF5;
+  --card-foreground: #171C24;
+  --popover: #FFFFFF;
+  --popover-foreground: #171C24;
+  --primary: #6D28D9;
+  --primary-foreground: #F6F8FB;
+  --secondary: #EBEFF5;
+  --secondary-foreground: #171C24;
+  --muted: #EBEFF5;
+  --muted-foreground: #5C6675;
+  --accent: #6D28D9;
+  --accent-foreground: #F6F8FB;
+  --destructive: #B3261E;
+  --destructive-foreground: #F6F8FB;
+  --border: #D5DCE6;
+  --input: #D5DCE6;
+  --ring: #6D28D9;
+  --chart-1: #6D28D9;
+  --chart-2: #0E7C86;
+  --chart-3: #2F7A2F;
+  --chart-4: #B45309;
+  --chart-5: #7C3AAD;
+  --sidebar: #EBEFF5;
+  --sidebar-foreground: #171C24;
+  --sidebar-primary: #6D28D9;
+  --sidebar-primary-foreground: #F6F8FB;
+  --sidebar-accent: #FFFFFF;
+  --sidebar-accent-foreground: #171C24;
+  --sidebar-border: #D5DCE6;
+  --sidebar-ring: #6D28D9;
+}
+
+/* ── Shiki multi-theme ──────────────────────────────────────
+   El HTML se resalta una sola vez en el servidor con los seis themes;
+   cada bloque lleva una variable por flavor y aquí se activa la del
+   flavor vigente. Cambiar de theme no re-renderiza nada. */
+[data-theme="hawking"] .shiki,
+[data-theme="hawking"] .shiki span {
+  color: var(--sh-shiki-hawking) !important;
+  background-color: var(--sh-shiki-hawking-bg) !important;
+}
+[data-theme="event-horizon"] .shiki,
+[data-theme="event-horizon"] .shiki span {
+  color: var(--sh-shiki-event-horizon) !important;
+  background-color: var(--sh-shiki-event-horizon-bg) !important;
+}
+[data-theme="deep-void"] .shiki,
+[data-theme="deep-void"] .shiki span {
+  color: var(--sh-shiki-deep-void) !important;
+  background-color: var(--sh-shiki-deep-void-bg) !important;
+}
+[data-theme="background-radiation"] .shiki,
+[data-theme="background-radiation"] .shiki span {
+  color: var(--sh-shiki-background-radiation) !important;
+  background-color: var(--sh-shiki-background-radiation-bg) !important;
+}
+[data-theme="photon-sphere"] .shiki,
+[data-theme="photon-sphere"] .shiki span {
+  color: var(--sh-shiki-photon-sphere) !important;
+  background-color: var(--sh-shiki-photon-sphere-bg) !important;
+}
+[data-theme="white-dwarf"] .shiki,
+[data-theme="white-dwarf"] .shiki span {
+  color: var(--sh-shiki-white-dwarf) !important;
+  background-color: var(--sh-shiki-white-dwarf-bg) !important;
+}

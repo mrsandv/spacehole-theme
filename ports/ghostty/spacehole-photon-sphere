@@ -1,0 +1,24 @@
+# Spacehole Photon Sphere — Luz atrapada en órbita
+# https://spacehole.tech
+background = #DCD7C9
+foreground = #2C3639
+cursor-color = #7A4E27
+cursor-text = #DCD7C9
+selection-background = #C2BBA6
+selection-foreground = #1A2224
+palette = 0=#2C3639
+palette = 1=#8F2F2F
+palette = 2=#42611F
+palette = 3=#6F5313
+palette = 4=#1F5F66
+palette = 5=#5E3A7A
+palette = 6=#2A6B62
+palette = 7=#DCD7C9
+palette = 8=#545D60
+palette = 9=#AB6363
+palette = 10=#718957
+palette = 11=#937E4E
+palette = 12=#57878C
+palette = 13=#866B9B
+palette = 14=#5F9089
+palette = 15=#E5E1D7

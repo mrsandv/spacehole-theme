@@ -1,0 +1,23 @@
+{
+  "name": "Spacehole Hawking",
+  "background": "#000000",
+  "foreground": "#E8E0F0",
+  "cursorColor": "#FF2E97",
+  "selectionBackground": "#2E1A42",
+  "black": "#0D0714",
+  "red": "#FF4D6D",
+  "green": "#00FF9C",
+  "yellow": "#FFD426",
+  "blue": "#4D9FFF",
+  "purple": "#FF2E97",
+  "cyan": "#00F0FF",
+  "white": "#E8E0F0",
+  "brightBlack": "#8873A4",
+  "brightRed": "#FF7A92",
+  "brightGreen": "#40FFB5",
+  "brightYellow": "#FFDF5C",
+  "brightBlue": "#7AB7FF",
+  "brightPurple": "#FF62B1",
+  "brightCyan": "#40F4FF",
+  "brightWhite": "#FFFFFF"
+}

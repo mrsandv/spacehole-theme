@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Spacehole">
+  <defs>
+    <linearGradient id="sh-photon-sphere" x1="0.25" y1="0" x2="0.72" y2="1">
+      <stop offset="0" stop-color="#AB9378"/>
+      <stop offset="0.42" stop-color="#8E6947"/>
+      <stop offset="1" stop-color="#7A4E27"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="39" fill="none" stroke="url(#sh-photon-sphere)" stroke-width="10"/>
+  <circle cx="60" cy="60" r="28" fill="#2C3639"/>
+  <circle cx="60" cy="60" r="29.4" fill="none" stroke="#1F5F66" stroke-width="1.1" opacity="0.75"/>
+</svg>

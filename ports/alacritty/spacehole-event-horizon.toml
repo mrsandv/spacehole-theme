@@ -1,0 +1,35 @@
+# Spacehole Event Horizon — Vacío y disco de acreción
+# https://spacehole.tech
+
+[colors.primary]
+background = "#0B0E14"
+foreground = "#C9D1E0"
+bright_foreground = "#EAF0FA"
+
+[colors.cursor]
+text = "#0B0E14"
+cursor = "#F2A65A"
+
+[colors.selection]
+text = "#EAF0FA"
+background = "#24304A"
+
+[colors.normal]
+black = "#131822"
+red = "#F26D7D"
+green = "#9ECE6A"
+yellow = "#F2C14E"
+blue = "#7AA2F7"
+magenta = "#A78BFA"
+cyan = "#5FD3D8"
+white = "#C9D1E0"
+
+[colors.bright]
+black = "#7C8798"
+red = "#F5929E"
+green = "#B6DA8F"
+yellow = "#F5D17A"
+blue = "#9BB9F9"
+magenta = "#BDA8FB"
+cyan = "#87DEE2"
+white = "#EAF0FA"

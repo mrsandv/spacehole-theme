@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Spacehole">
+  <defs>
+    <linearGradient id="sh-hawking-s" x1="0.25" y1="0" x2="0.72" y2="1">
+      <stop offset="0" stop-color="#611139"/>
+      <stop offset="0.42" stop-color="#BF2371"/>
+      <stop offset="1" stop-color="#FF2E97"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="39" fill="none" stroke="url(#sh-hawking-s)" stroke-width="13"/>
+  <circle cx="60" cy="60" r="30" fill="#000000"/>
+</svg>

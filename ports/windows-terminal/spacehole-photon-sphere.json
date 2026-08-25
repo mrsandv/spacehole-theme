@@ -1,0 +1,23 @@
+{
+  "name": "Spacehole Photon Sphere",
+  "background": "#DCD7C9",
+  "foreground": "#2C3639",
+  "cursorColor": "#7A4E27",
+  "selectionBackground": "#C2BBA6",
+  "black": "#2C3639",
+  "red": "#8F2F2F",
+  "green": "#42611F",
+  "yellow": "#6F5313",
+  "blue": "#1F5F66",
+  "purple": "#5E3A7A",
+  "cyan": "#2A6B62",
+  "white": "#DCD7C9",
+  "brightBlack": "#545D60",
+  "brightRed": "#AB6363",
+  "brightGreen": "#718957",
+  "brightYellow": "#937E4E",
+  "brightBlue": "#57878C",
+  "brightPurple": "#866B9B",
+  "brightCyan": "#5F9089",
+  "brightWhite": "#1A2224"
+}

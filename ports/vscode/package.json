@@ -1,0 +1,56 @@
+{
+  "name": "spacehole-theme",
+  "displayName": "Spacehole Theme",
+  "description": "Spacehole — 6 flavors para VS Code.",
+  "version": "0.1.0",
+  "publisher": "mrsandv",
+  "license": "MIT",
+  "homepage": "https://spacehole.tech",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "light",
+    "color-theme",
+    "spacehole"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Spacehole Hawking",
+        "uiTheme": "vs-dark",
+        "path": "./themes/spacehole-hawking-color-theme.json"
+      },
+      {
+        "label": "Spacehole Event Horizon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/spacehole-event-horizon-color-theme.json"
+      },
+      {
+        "label": "Spacehole Deep Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/spacehole-deep-void-color-theme.json"
+      },
+      {
+        "label": "Spacehole Background Radiation",
+        "uiTheme": "vs-dark",
+        "path": "./themes/spacehole-background-radiation-color-theme.json"
+      },
+      {
+        "label": "Spacehole Photon Sphere",
+        "uiTheme": "vs",
+        "path": "./themes/spacehole-photon-sphere-color-theme.json"
+      },
+      {
+        "label": "Spacehole White Dwarf",
+        "uiTheme": "vs",
+        "path": "./themes/spacehole-white-dwarf-color-theme.json"
+      }
+    ]
+  }
+}

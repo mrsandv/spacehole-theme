@@ -1,0 +1,33 @@
+/* Spacehole Background Radiation — Cinta analógica, estática cósmica
+   Generado desde palette/tokens.json. No editar a mano. */
+[data-theme="spacehole-background-radiation"] {
+  color-scheme: dark;
+  --sh-bg: #14101A; /* cinta */
+  --sh-bg-alt: #1D1826; /* superficie */
+  --sh-bg-elevated: #262034; /* elevado */
+  --sh-selection: #3A2F4E; /* captura */
+  --sh-border: #2E2740; /* límite */
+  --sh-muted: #8F84A3; /* ruido */
+  --sh-subtext: #ADA2C0; /* halo */
+  --sh-fg: #D8D0E0; /* señal */
+  --sh-fg-bright: #F0EAF7; /* destello */
+  --sh-keyword: #E07BAE; /* chroma */
+  --sh-function: #6FCEDE; /* tracking */
+  --sh-string: #8FD9A0; /* fósforo */
+  --sh-constant: #E0B072; /* ámbar */
+  --sh-type: #C9A0E0; /* scanline */
+  --sh-operator: #D69AC0; /* flujo */
+  --sh-error: #E08494; /* dropout */
+  --sh-warning: #E0B072; /* aviso */
+  --sh-success: #8FD9A0; /* estable */
+  --sh-info: #6FCEDE; /* sync */
+
+  --sh-ansi-black: #1D1826;
+  --sh-ansi-red: #E08494;
+  --sh-ansi-green: #8FD9A0;
+  --sh-ansi-yellow: #E0B072;
+  --sh-ansi-blue: #8AAEE0;
+  --sh-ansi-magenta: #E07BAE;
+  --sh-ansi-cyan: #6FCEDE;
+  --sh-ansi-white: #D8D0E0;
+}

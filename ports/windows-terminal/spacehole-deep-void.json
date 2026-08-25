@@ -1,0 +1,23 @@
+{
+  "name": "Spacehole Deep Void",
+  "background": "#080A0F",
+  "foreground": "#B8C0CC",
+  "cursorColor": "#7DD3FC",
+  "selectionBackground": "#223046",
+  "black": "#10141C",
+  "red": "#E88796",
+  "green": "#8FBF9F",
+  "yellow": "#D9B88A",
+  "blue": "#7DD3FC",
+  "purple": "#B0A8C8",
+  "cyan": "#9FC4DC",
+  "white": "#B8C0CC",
+  "brightBlack": "#757F8E",
+  "brightRed": "#EEA5B0",
+  "brightGreen": "#ABCFB7",
+  "brightYellow": "#E3CAA7",
+  "brightBlue": "#9EDEFD",
+  "brightPurple": "#C4BED6",
+  "brightCyan": "#B7D3E5",
+  "brightWhite": "#DDE4EC"
+}

@@ -1,0 +1,33 @@
+/* Spacehole White Dwarf — Carbono cristalizado, luz fría
+   Generado desde palette/tokens.json. No editar a mano. */
+[data-theme="spacehole-white-dwarf"] {
+  color-scheme: light;
+  --sh-bg: #F6F8FB; /* enana */
+  --sh-bg-alt: #EBEFF5; /* superficie */
+  --sh-bg-elevated: #FFFFFF; /* elevado */
+  --sh-selection: #D3E0F5; /* captura */
+  --sh-border: #D5DCE6; /* límite */
+  --sh-muted: #5C6675; /* sombra */
+  --sh-subtext: #3A4350; /* penumbra */
+  --sh-fg: #171C24; /* carbono */
+  --sh-fg-bright: #000000; /* núcleo */
+  --sh-keyword: #6D28D9; /* degeneración */
+  --sh-function: #0E7C86; /* espectro */
+  --sh-string: #2F7A2F; /* emisión */
+  --sh-constant: #B45309; /* corona */
+  --sh-type: #7C3AAD; /* absorción */
+  --sh-operator: #455467; /* flujo */
+  --sh-error: #B3261E; /* colapso */
+  --sh-warning: #96660A; /* aviso */
+  --sh-success: #2F7A2F; /* estable */
+  --sh-info: #0E7C86; /* señal */
+
+  --sh-ansi-black: #171C24;
+  --sh-ansi-red: #B3261E;
+  --sh-ansi-green: #2F7A2F;
+  --sh-ansi-yellow: #96660A;
+  --sh-ansi-blue: #1D4ED8;
+  --sh-ansi-magenta: #6D28D9;
+  --sh-ansi-cyan: #0E7C86;
+  --sh-ansi-white: #F6F8FB;
+}

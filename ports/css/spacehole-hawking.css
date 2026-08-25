@@ -1,0 +1,33 @@
+/* Spacehole Hawking — Radiación neón sobre vacío
+   Generado desde palette/tokens.json. No editar a mano. */
+[data-theme="spacehole-hawking"] {
+  color-scheme: dark;
+  --sh-bg: #000000; /* singularidad */
+  --sh-bg-alt: #0D0714; /* superficie */
+  --sh-bg-elevated: #160C21; /* elevado */
+  --sh-selection: #2E1A42; /* captura */
+  --sh-border: #241633; /* límite */
+  --sh-muted: #8873A4; /* polvo */
+  --sh-subtext: #B7A6CC; /* halo */
+  --sh-fg: #E8E0F0; /* emisión */
+  --sh-fg-bright: #FFFFFF; /* destello */
+  --sh-keyword: #FF2E97; /* radiación */
+  --sh-function: #00F0FF; /* horizonte */
+  --sh-string: #00FF9C; /* plasma */
+  --sh-constant: #C77BFF; /* cuántico */
+  --sh-type: #FFD426; /* fotón */
+  --sh-operator: #FF6FC0; /* flujo */
+  --sh-error: #FF4D6D; /* colapso */
+  --sh-warning: #FFD426; /* alerta */
+  --sh-success: #00FF9C; /* estable */
+  --sh-info: #00F0FF; /* señal */
+
+  --sh-ansi-black: #0D0714;
+  --sh-ansi-red: #FF4D6D;
+  --sh-ansi-green: #00FF9C;
+  --sh-ansi-yellow: #FFD426;
+  --sh-ansi-blue: #4D9FFF;
+  --sh-ansi-magenta: #FF2E97;
+  --sh-ansi-cyan: #00F0FF;
+  --sh-ansi-white: #E8E0F0;
+}

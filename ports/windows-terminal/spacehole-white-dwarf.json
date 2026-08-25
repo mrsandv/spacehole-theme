@@ -1,0 +1,23 @@
+{
+  "name": "Spacehole White Dwarf",
+  "background": "#F6F8FB",
+  "foreground": "#171C24",
+  "cursorColor": "#6D28D9",
+  "selectionBackground": "#D3E0F5",
+  "black": "#171C24",
+  "red": "#B3261E",
+  "green": "#2F7A2F",
+  "yellow": "#96660A",
+  "blue": "#1D4ED8",
+  "purple": "#6D28D9",
+  "cyan": "#0E7C86",
+  "white": "#F6F8FB",
+  "brightBlack": "#5C6675",
+  "brightRed": "#C65C56",
+  "brightGreen": "#639B63",
+  "brightYellow": "#B08C47",
+  "brightBlue": "#567AE2",
+  "brightPurple": "#925EE3",
+  "brightCyan": "#4A9DA4",
+  "brightWhite": "#000000"
+}

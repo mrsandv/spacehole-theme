@@ -1,0 +1,24 @@
+# Spacehole White Dwarf — Carbono cristalizado, luz fría
+# https://spacehole.tech
+background = #F6F8FB
+foreground = #171C24
+cursor-color = #6D28D9
+cursor-text = #F6F8FB
+selection-background = #D3E0F5
+selection-foreground = #000000
+palette = 0=#171C24
+palette = 1=#B3261E
+palette = 2=#2F7A2F
+palette = 3=#96660A
+palette = 4=#1D4ED8
+palette = 5=#6D28D9
+palette = 6=#0E7C86
+palette = 7=#F6F8FB
+palette = 8=#5C6675
+palette = 9=#C65C56
+palette = 10=#639B63
+palette = 11=#B08C47
+palette = 12=#567AE2
+palette = 13=#925EE3
+palette = 14=#4A9DA4
+palette = 15=#F8FAFC

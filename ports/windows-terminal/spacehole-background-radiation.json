@@ -1,0 +1,23 @@
+{
+  "name": "Spacehole Background Radiation",
+  "background": "#14101A",
+  "foreground": "#D8D0E0",
+  "cursorColor": "#E07BAE",
+  "selectionBackground": "#3A2F4E",
+  "black": "#1D1826",
+  "red": "#E08494",
+  "green": "#8FD9A0",
+  "yellow": "#E0B072",
+  "blue": "#8AAEE0",
+  "purple": "#E07BAE",
+  "cyan": "#6FCEDE",
+  "white": "#D8D0E0",
+  "brightBlack": "#8F84A3",
+  "brightRed": "#E8A3AF",
+  "brightGreen": "#ABE3B8",
+  "brightYellow": "#E8C495",
+  "brightBlue": "#A7C2E8",
+  "brightPurple": "#E89CC2",
+  "brightCyan": "#93DAE6",
+  "brightWhite": "#F0EAF7"
+}

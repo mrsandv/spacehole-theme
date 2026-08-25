@@ -1,0 +1,24 @@
+# Spacehole Deep Void — Monocromo frío con un solo acento
+# https://spacehole.tech
+background = #080A0F
+foreground = #B8C0CC
+cursor-color = #7DD3FC
+cursor-text = #080A0F
+selection-background = #223046
+selection-foreground = #DDE4EC
+palette = 0=#10141C
+palette = 1=#E88796
+palette = 2=#8FBF9F
+palette = 3=#D9B88A
+palette = 4=#7DD3FC
+palette = 5=#B0A8C8
+palette = 6=#9FC4DC
+palette = 7=#B8C0CC
+palette = 8=#757F8E
+palette = 9=#EEA5B0
+palette = 10=#ABCFB7
+palette = 11=#E3CAA7
+palette = 12=#9EDEFD
+palette = 13=#C4BED6
+palette = 14=#B7D3E5
+palette = 15=#CAD0D9

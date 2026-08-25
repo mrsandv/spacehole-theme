@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  palette:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Ningún color entra si no cumple WCAG AA sobre su propio fondo.
+      - name: Validar contraste y estructura
+        run: node scripts/validate.mjs
+
+      - name: Generar ports
+        run: node scripts/build.mjs
+
+      # Si esto falla es que alguien editó ports/ a mano en vez de tokens.json.
+      - name: Verificar que ports/ está al día
+        run: |
+          if [ -n "$(git status --porcelain ports/)" ]; then
+            echo "::error::ports/ no coincide con palette/tokens.json."
+            echo "Corre 'npm run build' y commitea el resultado."
+            git --no-pager diff --stat ports/
+            exit 1
+          fi
+          echo "ports/ al día"

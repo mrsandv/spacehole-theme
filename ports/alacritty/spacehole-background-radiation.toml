@@ -1,0 +1,35 @@
+# Spacehole Background Radiation — Cinta analógica, estática cósmica
+# https://spacehole.tech
+
+[colors.primary]
+background = "#14101A"
+foreground = "#D8D0E0"
+bright_foreground = "#F0EAF7"
+
+[colors.cursor]
+text = "#14101A"
+cursor = "#E07BAE"
+
+[colors.selection]
+text = "#F0EAF7"
+background = "#3A2F4E"
+
+[colors.normal]
+black = "#1D1826"
+red = "#E08494"
+green = "#8FD9A0"
+yellow = "#E0B072"
+blue = "#8AAEE0"
+magenta = "#E07BAE"
+cyan = "#6FCEDE"
+white = "#D8D0E0"
+
+[colors.bright]
+black = "#8F84A3"
+red = "#E8A3AF"
+green = "#ABE3B8"
+yellow = "#E8C495"
+blue = "#A7C2E8"
+magenta = "#E89CC2"
+cyan = "#93DAE6"
+white = "#F0EAF7"

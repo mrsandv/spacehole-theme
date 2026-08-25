@@ -1,0 +1,23 @@
+{
+  "name": "Spacehole Event Horizon",
+  "background": "#0B0E14",
+  "foreground": "#C9D1E0",
+  "cursorColor": "#F2A65A",
+  "selectionBackground": "#24304A",
+  "black": "#131822",
+  "red": "#F26D7D",
+  "green": "#9ECE6A",
+  "yellow": "#F2C14E",
+  "blue": "#7AA2F7",
+  "purple": "#A78BFA",
+  "cyan": "#5FD3D8",
+  "white": "#C9D1E0",
+  "brightBlack": "#7C8798",
+  "brightRed": "#F5929E",
+  "brightGreen": "#B6DA8F",
+  "brightYellow": "#F5D17A",
+  "brightBlue": "#9BB9F9",
+  "brightPurple": "#BDA8FB",
+  "brightCyan": "#87DEE2",
+  "brightWhite": "#EAF0FA"
+}

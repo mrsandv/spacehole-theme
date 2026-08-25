@@ -1,0 +1,24 @@
+# Spacehole Hawking — Radiación neón sobre vacío
+# https://spacehole.tech
+background = #000000
+foreground = #E8E0F0
+cursor-color = #FF2E97
+cursor-text = #000000
+selection-background = #2E1A42
+selection-foreground = #FFFFFF
+palette = 0=#0D0714
+palette = 1=#FF4D6D
+palette = 2=#00FF9C
+palette = 3=#FFD426
+palette = 4=#4D9FFF
+palette = 5=#FF2E97
+palette = 6=#00F0FF
+palette = 7=#E8E0F0
+palette = 8=#8873A4
+palette = 9=#FF7A92
+palette = 10=#40FFB5
+palette = 11=#FFDF5C
+palette = 12=#7AB7FF
+palette = 13=#FF62B1
+palette = 14=#40F4FF
+palette = 15=#EEE8F4

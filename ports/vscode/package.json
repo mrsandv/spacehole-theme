@@ -1,11 +1,23 @@
 {
   "name": "spacehole-theme",
-  "displayName": "Spacehole Theme",
-  "description": "Spacehole — 6 flavors para VS Code.",
+  "displayName": "Spacehole",
+  "description": "6 flavors — cuatro oscuros y dos claros — con contraste WCAG AA verificado.",
   "version": "0.1.0",
   "publisher": "mrsandv",
   "license": "MIT",
   "homepage": "https://spacehole.tech",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#000000",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrsandv/spacehole-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrsandv/spacehole-theme/issues"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -14,9 +26,14 @@
   ],
   "keywords": [
     "theme",
+    "color-theme",
     "dark",
     "light",
-    "color-theme",
+    "dark theme",
+    "light theme",
+    "base16",
+    "wcag",
+    "accessible",
     "spacehole"
   ],
   "contributes": {

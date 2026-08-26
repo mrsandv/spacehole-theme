@@ -8,7 +8,7 @@ import { join } from "node:path";
 import { loadTokens, flavorList, ROOT } from "./lib/tokens.mjs";
 
 const TEMPLATES = [
-  "vscode", "base16", "css", "iterm", "ghostty", "alacritty", "windows-terminal", "logo", "logo-mark", "shadcn",
+  "vscode", "base16", "css", "iterm", "ghostty", "alacritty", "windows-terminal", "logo", "logo-mark", "shadcn", "icon", "preview", "vscode-meta",
 ];
 
 const tokens = loadTokens();
@@ -32,7 +32,17 @@ for (const name of TEMPLATES) {
     const out = tpl.render(flavors, tokens);
     writeFileSync(join(dir, tpl.filename), out, "utf8");
     count++;
-    summary.push(`  ${name.padEnd(18)} ${tpl.filename}`);
+
+    // Algunos templates traen compañía: README, licencia, changelog…
+    if (tpl.extraFiles) {
+      for (const [file, body] of Object.entries(tpl.extras(flavors, tokens))) {
+        // Los extras binarios (el icono) llegan como Buffer.
+        writeFileSync(join(dir, file), body, Buffer.isBuffer(body) ? undefined : "utf8");
+        count++;
+      }
+    }
+
+    summary.push(`  ${name.padEnd(18)} ${tpl.filename}${tpl.extraFiles ? " + extras" : ""}`);
     continue;
   }
 
@@ -43,45 +53,18 @@ for (const name of TEMPLATES) {
       : base;
 
     const out = tpl.render(flavor, tokens);
-    const body = typeof out === "string" ? out : JSON.stringify(out, null, 2) + "\n";
 
-    writeFileSync(join(dir, file), body, "utf8");
+    // Los templates binarios (PNG) devuelven Buffer y se escriben tal cual.
+    if (tpl.binary) {
+      writeFileSync(join(dir, file), out);
+    } else {
+      const body = typeof out === "string" ? out : JSON.stringify(out, null, 2) + "\n";
+      writeFileSync(join(dir, file), body, "utf8");
+    }
     count++;
   }
   summary.push(`  ${name.padEnd(18)} ${flavors.length} archivos`);
 }
 
-// package.json de la extensión de VS Code, derivado de los mismos tokens.
-const vscodeDir = join(portsDir, "vscode");
-writeFileSync(
-  join(vscodeDir, "package.json"),
-  JSON.stringify(
-    {
-      name: `${tokens.slug}-theme`,
-      displayName: `${tokens.name} Theme`,
-      description: `${tokens.name} — ${flavors.length} flavors para VS Code.`,
-      version: tokens.version,
-      publisher: "mrsandv",
-      license: tokens.license,
-      homepage: tokens.homepage,
-      engines: { vscode: "^1.80.0" },
-      categories: ["Themes"],
-      keywords: ["theme", "dark", "light", "color-theme", tokens.slug],
-      contributes: {
-        themes: flavors.map((f) => ({
-          label: `${tokens.name} ${f.name}`,
-          uiTheme: f.appearance === "dark" ? "vs-dark" : "vs",
-          path: `./themes/spacehole-${f.slug}-color-theme.json`,
-        })),
-      },
-    },
-    null,
-    2,
-  ) + "\n",
-  "utf8",
-);
-count++;
-
 console.log(`✓ ${count} archivos generados en ports/\n`);
 console.log(summary.join("\n"));
-console.log(`  vscode/package.json  (${flavors.length} themes registrados)`);

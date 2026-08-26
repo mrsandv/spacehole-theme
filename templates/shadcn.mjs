@@ -80,9 +80,15 @@ export function render(flavors, tokens) {
     // Un flavor se duplica en :root para que el documento tenga color válido
     // en el instante antes de que el cliente aplique el suyo. Es el fallback
     // del sitio (tokens.rootFlavor), no necesariamente el flavor de marca.
+    //
+    // Va envuelto en :where() para que su especificidad sea cero. Sin eso,
+    // `:root` empata con `[data-theme="x"]` y gana el que aparezca después en
+    // el archivo: los flavors declarados ANTES del fallback quedaban mudos al
+    // seleccionarlos, y los declarados después funcionaban. El síntoma es
+    // desconcertante — "solo algunos themes responden" — y depende del orden.
     const isRoot = (tokens.rootFlavor ?? flavors.find((f) => f.primary)?.slug) === flavor.slug;
     const selector = isRoot
-      ? `:root,\n[data-theme="${flavor.slug}"]`
+      ? `:where(:root),\n[data-theme="${flavor.slug}"]`
       : `[data-theme="${flavor.slug}"]`;
 
     return `/* ${flavor.name} — ${flavor.tagline} */

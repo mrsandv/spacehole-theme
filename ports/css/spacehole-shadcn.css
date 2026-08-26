@@ -178,7 +178,7 @@
 }
 
 /* Background Radiation — Cinta analógica, estática cósmica */
-:root,
+:where(:root),
 [data-theme="background-radiation"] {
   color-scheme: dark;
 

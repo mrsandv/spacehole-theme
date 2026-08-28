@@ -1,14 +1,7 @@
-<h1 align="center">
-  <img src="https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/brand/icon.png" width="120" alt="">
-  <br>Spacehole
-</h1>
-
-<p align="center">
-  6 flavors — 4 oscuros, 2 claros.<br>
-  <a href="https://spacehole.tech">spacehole.tech</a>
-</p>
-
 ![Spacehole Hawking](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-hawking.png)
+
+**6 flavors** — 4 oscuros, 2 claros. Contraste WCAG AA verificado en cada uno.
+[spacehole.tech](https://spacehole.tech)
 
 ## Los flavors
 

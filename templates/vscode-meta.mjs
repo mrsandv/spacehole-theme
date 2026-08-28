@@ -69,17 +69,14 @@ ${f.tagline}. ${f.appearance === "dark" ? "Oscuro" : "Claro"}.
     )
     .join("\n");
 
-  const readme = `<h1 align="center">
-  <img src="${RAW}/brand/icon.png" width="120" alt="">
-  <br>Spacehole
-</h1>
+  // Sin logo ni título arriba: la página del Marketplace ya muestra el icono,
+  // el nombre y la descripción justo encima del README. Repetirlos deja dos
+  // logos en pantalla. Se abre directo con el preview, que es lo que la página
+  // no muestra y lo único que de verdad vende un theme.
+  const readme = `![Spacehole Hawking](${RAW}/ports/preview/spacehole-hawking.png)
 
-<p align="center">
-  ${flavors.length} flavors — ${dark.length} oscuros, ${light.length} claros.<br>
-  <a href="${tokens.homepage}">spacehole.tech</a>
-</p>
-
-![Spacehole Hawking](${RAW}/ports/preview/spacehole-hawking.png)
+**${flavors.length} flavors** — ${dark.length} oscuros, ${light.length} claros. Contraste WCAG AA verificado en cada uno.
+[spacehole.tech](${tokens.homepage})
 
 ## Los flavors
 

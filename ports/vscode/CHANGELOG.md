@@ -3,7 +3,7 @@
 Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y [SemVer](https://semver.org/lang/es/).
 
-## [0.1.1] — 2026-08-26
+## [0.1.2] — 2026-08-26
 
 ### Añadido
 

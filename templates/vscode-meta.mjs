@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ROOT } from "../scripts/lib/tokens.mjs";
-import { render as renderIcon } from "./icon.mjs";
+
 
 /**
  * Metadatos del paquete de VS Code: package.json, README, CHANGELOG y
@@ -70,7 +70,7 @@ ${f.tagline}. ${f.appearance === "dark" ? "Oscuro" : "Claro"}.
     .join("\n");
 
   const readme = `<h1 align="center">
-  <img src="${RAW}/ports/icon/spacehole-hawking.png" width="96" alt="">
+  <img src="${RAW}/brand/icon.png" width="120" alt="">
   <br>Spacehole
 </h1>
 
@@ -156,7 +156,8 @@ node_modules/**
     "CHANGELOG.md": changelog,
     ".vscodeignore": ignore,
     "LICENSE": readFileSync(join(ROOT, "LICENSE"), "utf8"),
-    // El icono del paquete es el del flavor de marca.
-    "icon.png": renderIcon(flavors.find((f) => f.primary) ?? flavors[0]),
+    // El logo de marca, no el símbolo generado: es obra de diseño y vive en
+    // brand/ como archivo. Ver brand/README.md.
+    "icon.png": readFileSync(join(ROOT, "brand", "icon.png")),
   };
 }

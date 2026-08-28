@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/icon/spacehole-hawking.png" width="96" alt="">
+  <img src="https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/brand/icon.png" width="120" alt="">
   <br>Spacehole
 </h1>
 

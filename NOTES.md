@@ -85,6 +85,32 @@ eso no se hizo así de entrada.
 
 ---
 
+## El namespace de Open VSX está sin verificar
+
+**Estado:** pendiente, un trámite. Mientras tanto la extensión funciona igual.
+
+La página de Open VSX muestra un aviso naranja: *"That user account is not a
+verified publisher of the namespace mrsandv"*. Es lo normal en toda extensión
+nueva — en Open VSX crear un namespace no te acredita como su dueño, porque
+cualquiera puede registrar cualquier nombre. En el Marketplace de Microsoft no
+pasa porque ahí el publisher se valida al crearlo.
+
+**Para quitarlo:** abrir un issue en
+https://github.com/EclipseFdn/open-vsx.org/issues/new/choose con la plantilla
+*"Request ownership of a namespace"*, pidiendo `mrsandv`. La verificación es
+directa porque la cuenta de GitHub y el repo son los mismos. Tarda unos días.
+
+La solicitud es por **namespace**, no por extensión: una vez verificado, todo
+lo que se publique después entra ya verificado.
+
+Comprobar el estado en cualquier momento:
+
+```bash
+curl -s https://open-vsx.org/api/mrsandv | grep -o '"verified":[a-z]*'
+```
+
+---
+
 ## Dependencias silenciosas que conviene recordar
 
 **El README del Marketplace necesita que el repo sea público.** Las imágenes

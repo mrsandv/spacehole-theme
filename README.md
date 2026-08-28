@@ -91,6 +91,11 @@ const hl = await createHighlighter({ themes: [theme], langs: ["typescript"] });
 Un flavor puede declararse `"monochrome": true` para relajar el punto 6 a
 propósito, como hace Deep Void.
 
+## Decisiones abiertas
+
+Las que quedaron pendientes a propósito están en [NOTES.md](NOTES.md), con el
+contexto para retomarlas sin reconstruir el razonamiento.
+
 ## Licencia
 
 MIT

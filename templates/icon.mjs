@@ -3,15 +3,15 @@ import { hexToRgb } from "../scripts/lib/color.mjs";
 import { palette } from "./logo.mjs";
 
 /**
- * Icono PNG para el Marketplace de VS Code y Open VSX.
+ * PNG icon for the VS Code Marketplace and Open VSX.
  *
- * Rasteriza la misma geometría que el SVG del logo. Se dibuja a mano en vez
- * de convertir el SVG porque no hay rasterizador disponible ni en la máquina
- * ni en CI, y las herramientas de macOS añaden padding que descentra la marca.
+ * It rasterizes the same geometry as the logo SVG. It's drawn by hand instead
+ * of converting the SVG because there's no rasterizer on the machine or in CI,
+ * and the macOS tools add padding that off-centers the mark.
  *
- * Las proporciones vienen del símbolo original en un lienzo de 120: la marca
- * ocupa el 75% del icono y el resto es aire, que es lo que pide el Marketplace
- * para que no se vea apretada junto a las demás extensiones.
+ * The proportions come from the original symbol on a 120-unit canvas: the
+ * mark fills 75% of the icon and the rest is breathing room, which is what
+ * the Marketplace needs so it doesn't look cramped next to other extensions.
  */
 export const single = false;
 export const binary = true;
@@ -20,16 +20,16 @@ export const outDir = "icon";
 export const filename = (flavor) => `spacehole-${flavor.slug}.png`;
 
 const SIZE = 256;
-const SS = 4; // supersampling por eje: 16 muestras por píxel
+const SS = 4; // supersampling per axis: 16 samples per pixel
 
-// Geometría del símbolo, en el espacio original de 120 unidades.
+// Symbol geometry, in the original 120-unit space.
 const UNIT = 120;
 const R_DISK = 39;
 const W_DISK = 10;
 const R_SHADOW = 28;
 const R_PHOTON = 29.4;
 
-/** Interpola el gradiente del disco según la posición dentro del símbolo. */
+/** Interpolates the disk gradient by position within the symbol. */
 function diskColor(t, stops) {
   const clamped = Math.max(0, Math.min(1, t));
   for (let i = 1; i < stops.length; i++) {
@@ -54,7 +54,7 @@ export function render(flavor) {
     [1, hexToRgb(p.bright)],
   ];
 
-  // El símbolo ocupa el 75% del icono; el resto es aire.
+  // The symbol fills 75% of the icon; the rest is breathing room.
   const scale = (SIZE * 0.75) / UNIT;
   const cx = SIZE / 2;
   const cy = SIZE / 2;
@@ -69,21 +69,21 @@ export function render(flavor) {
 
       for (let sy = 0; sy < SS; sy++) {
         for (let sx = 0; sx < SS; sx++) {
-          // Coordenadas de la muestra en el espacio del símbolo.
+          // Sample coordinates in the symbol's space.
           const ux = (x + (sx + 0.5) / SS - cx) / scale;
           const uy = (y + (sy + 0.5) / SS - cy) / scale;
           const dist = Math.hypot(ux, uy);
 
           let c = bg;
           if (Math.abs(dist - R_DISK) <= W_DISK / 2) {
-            // El gradiente del SVG va de arriba-izquierda a abajo-derecha.
+            // The SVG gradient runs from top-left to bottom-right.
             const t = (ux / UNIT + 0.25 + (uy / UNIT + 0.5)) / 1.5;
             c = diskColor(t, stops);
           }
           if (dist <= R_SHADOW) {
             c = shadow;
           } else if (Math.abs(dist - R_PHOTON) <= 0.55) {
-            // El anillo de fotones va al 75% de opacidad sobre lo que haya.
+            // The photon ring is drawn at 75% opacity over whatever is below.
             c = [0, 1, 2].map((i) => c[i] + (photon[i] - c[i]) * 0.75);
           }
 

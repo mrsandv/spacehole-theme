@@ -1,81 +1,81 @@
 ![Spacehole Hawking](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-hawking.png)
 
-**6 flavors** — 4 oscuros, 2 claros. Contraste WCAG AA verificado en cada uno.
+**6 flavors** — 4 dark, 2 light. WCAG AA contrast verified in each one.
 [spacehole.tech](https://spacehole.tech)
 
-## Los flavors
+## The flavors
 
-| Flavor | Modo | Para qué |
+| Flavor | Mode | Best for |
 |---|---|---|
-| **Hawking** | oscuro | Neón sobre negro absoluto. Alto impacto. |
-| **Event Horizon** | oscuro | Vacío azul y ámbar de acreción. El de jornada larga. |
-| **Deep Void** | oscuro | Monocromo frío con un solo acento. Para concentrarse. |
-| **Background Radiation** | oscuro | Cinta analógica, neón desaturado. |
-| **Photon Sphere** | claro | Cálido, sobre papel. Cansa menos con sol de frente. |
-| **White Dwarf** | claro | Frío y nítido, alto contraste. |
+| **Hawking** | dark | Neon on absolute black. High impact. |
+| **Event Horizon** | dark | Blue void and accretion amber. The one for long days. |
+| **Deep Void** | dark | Cold monochrome with a single accent. For focus. |
+| **Background Radiation** | dark | Analog tape, desaturated neon. |
+| **Photon Sphere** | light | Warm, on paper. Easier on the eyes in direct sunlight. |
+| **White Dwarf** | light | Cold and crisp, high contrast. |
 
-## Instalar
+## Install
 
-1. Abre **Extensiones** (`⇧⌘X` / `Ctrl+Shift+X`)
-2. Busca **Spacehole**
-3. **Install**, y luego `⌘K ⌘T` / `Ctrl+K Ctrl+T` para elegir flavor
+1. Open **Extensions** (`⇧⌘X` / `Ctrl+Shift+X`)
+2. Search for **Spacehole**
+3. **Install**, then `⌘K ⌘T` / `Ctrl+K Ctrl+T` to pick a flavor
 
-O desde la paleta de comandos:
+Or from the command palette:
 
 ```
 ext install mrsandv.spacehole-theme
 ```
 
-## Contraste verificado
+## Verified contrast
 
-Los 6 flavors cumplen **WCAG AA** en todos los roles de texto sobre su propio fondo. No es una declaración de intenciones: se verifica en cada commit y el build falla si un color no pasa.
+All 6 flavors pass **WCAG AA** for every text role on their own background. It's not a statement of intent: it's checked on every commit, and the build fails if a color doesn't pass.
 
-Los acentos de sintaxis además se comparan entre sí con **ΔE perceptual** y no con contraste — dos colores pueden tener la misma luminancia y ser obviamente distintos, así que medir contraste ahí da falsos positivos.
+Syntax accents are also compared with each other using **perceptual ΔE** rather than contrast — two colors can have the same luminance and still be obviously different, so measuring contrast there gives false positives.
 
-## También para tu terminal
+## Also for your terminal
 
-El mismo theme, generado desde los mismos tokens, para **iTerm2**, **Ghostty**, **Alacritty**, **Windows Terminal** y **base16** (que a su vez abre cientos de ports de la comunidad).
+The same theme, generated from the same tokens, for **iTerm2**, **Ghostty**, **Alacritty**, **Windows Terminal** and **base16** (which in turn unlocks hundreds of community ports).
 
-Todo está en el [repositorio](https://github.com/mrsandv/spacehole-theme).
+Everything is in the [repository](https://github.com/mrsandv/spacehole-theme).
 
-## Cómo está hecho
+## How it's made
 
-`palette/tokens.json` es la única fuente de verdad. Un comando genera los themes, los ports de terminal, el CSS, el icono y el logo. Nada se edita a mano, así que un color cambiado se propaga a todo en el mismo commit.
+`palette/tokens.json` is the single source of truth. One command generates the themes, the terminal ports, the CSS, the icon and the logo. Nothing is edited by hand, so a changed color propagates everywhere in the same commit.
 
-Sin dependencias: Node y nada más.
+No dependencies: Node and nothing else.
 
-## Galería
+## Gallery
 
 ### Spacehole Hawking
-Radiación neón sobre vacío. Oscuro.
+Neon radiation over the void. Dark.
 
 ![Hawking](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-hawking.png)
 
 ### Spacehole Event Horizon
-Vacío y disco de acreción. Oscuro.
+Void and accretion disk. Dark.
 
 ![Event Horizon](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-event-horizon.png)
 
 ### Spacehole Deep Void
-Monocromo frío con un solo acento. Oscuro.
+Cold monochrome with a single accent. Dark.
 
 ![Deep Void](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-deep-void.png)
 
 ### Spacehole Background Radiation
-Cinta analógica, estática cósmica. Oscuro.
+Analog tape, cosmic static. Dark.
 
 ![Background Radiation](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-background-radiation.png)
 
 ### Spacehole Photon Sphere
-Luz atrapada en órbita. Claro.
+Light trapped in orbit. Light.
 
 ![Photon Sphere](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-photon-sphere.png)
 
 ### Spacehole White Dwarf
-Carbono cristalizado, luz fría. Claro.
+Crystallized carbon, cold light. Light.
 
 ![White Dwarf](https://raw.githubusercontent.com/mrsandv/spacehole-theme/main/ports/preview/spacehole-white-dwarf.png)
 
-## Licencia
+## License
 
 MIT — [Marco Sandoval](https://spacehole.tech)

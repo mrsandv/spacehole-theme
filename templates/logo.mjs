@@ -1,18 +1,19 @@
 import { mix } from "../scripts/lib/color.mjs";
 
 /**
- * La marca: la sombra de un agujero negro.
+ * The mark: the shadow of a black hole.
  *
- * Tres elementos, todos con fundamento físico — no son adornos:
+ * Three elements, all grounded in physics — none of them is decoration:
  *
- *  1. La sombra      — el disco oscuro central. Es lo único que un agujero
- *                      negro "es" ópticamente: ausencia.
- *  2. El anillo de   — la circunferencia fina y brillante donde la luz orbita
- *     fotones          antes de caer. Es el borde real de la sombra.
- *  3. El disco de    — el anillo grueso exterior. Brilla ASIMÉTRICO: el lado
- *     acreción         que gira hacia nosotros se ve más intenso por efecto
- *                      Doppler relativista. Esa asimetría es la firma de la
- *                      marca, y lo que la separa de cualquier logo circular.
+ *  1. The shadow     — the dark central disk. It's the only thing a black
+ *                      hole optically "is": absence.
+ *  2. The photon     — the thin, bright circle where light orbits before
+ *     ring             falling in. It's the real edge of the shadow.
+ *  3. The accretion  — the thick outer ring. It glows ASYMMETRICALLY: the
+ *     disk             side spinning toward us looks brighter because of the
+ *                      relativistic Doppler effect. That asymmetry is the
+ *                      brand's signature, and what sets it apart from any
+ *                      circular logo.
  */
 export const extension = "svg";
 export const outDir = "logo";
@@ -21,9 +22,9 @@ export const filename = (flavor) => `spacehole-${flavor.slug}.svg`;
 const R_DISK = 39;
 
 /**
- * El brillo asimétrico se hace con un gradiente sobre el stroke, no con dos
- * arcos superpuestos: dos arcos dejan topes visibles y el linecap redondo
- * convierte el disco en una herradura en cuanto bajas de 48px.
+ * The asymmetric glow is a gradient on the stroke, not two overlapping
+ * arcs: two arcs leave visible seams, and the round linecap turns the disk
+ * into a horseshoe as soon as you go below 48px.
  */
 export function palette(flavor) {
   const c = Object.fromEntries(
@@ -31,8 +32,8 @@ export function palette(flavor) {
   );
   const dark = flavor.appearance === "dark";
   return {
-    // En un flavor claro el agujero no puede ser del color del papel:
-    // dejaría de leerse como agujero. Usa la tinta.
+    // In a light flavor the hole can't be the color of the paper: it would
+    // stop reading as a hole. Use the ink.
     shadow: dark ? c.bg : c.fg,
     dim: mix(c.keyword, c.bg, dark ? 0.62 : 0.5),
     mid: mix(c.keyword, c.bg, dark ? 0.25 : 0.2),
@@ -45,8 +46,8 @@ export function symbol(flavor, { size = 120, simple = false } = {}) {
   const p = palette(flavor);
   const id = `sh-${flavor.slug}${simple ? "-s" : ""}`;
 
-  // A tamaño de favicon el anillo de fotones es ruido: se omite, el disco
-  // engorda y la sombra crece con él para que el agujero siga leyéndose.
+  // At favicon size the photon ring is noise: it's dropped, the disk gets
+  // thicker, and the shadow grows with it so the hole still reads.
   const width = simple ? 13 : 10;
   const rShadow = simple ? 30 : 28;
   const rPhoton = 29.4;

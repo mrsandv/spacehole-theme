@@ -1,6 +1,6 @@
 import { mix } from "../scripts/lib/color.mjs";
 
-/** Alpha en formato VS Code: #RRGGBBAA */
+/** Alpha in VS Code format: #RRGGBBAA */
 const a = (hex, alpha) =>
   hex + Math.round(alpha * 255).toString(16).padStart(2, "0").toUpperCase();
 
@@ -16,7 +16,7 @@ export function render(flavor, tokens) {
     Object.entries(flavor.colors).map(([k, v]) => [k, v.hex]),
   );
   const dark = flavor.appearance === "dark";
-  // Sombra de foco y hovers derivados, para no inventar colores sueltos.
+  // Derived focus shadow and hovers, so no stray colors get invented.
   const hover = mix(c.bgAlt, dark ? "#FFFFFF" : "#000000", 0.05);
   const active = mix(c.bgAlt, dark ? "#FFFFFF" : "#000000", 0.09);
 

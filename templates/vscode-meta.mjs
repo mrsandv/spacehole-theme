@@ -4,9 +4,9 @@ import { ROOT } from "../scripts/lib/tokens.mjs";
 
 
 /**
- * Metadatos del paquete de VS Code: package.json, README, CHANGELOG y
- * .vscodeignore. El README es lo que se ve en la página del Marketplace, y
- * ahí las imágenes tienen que ser URLs absolutas — las relativas no cargan.
+ * VS Code package metadata: package.json, README, CHANGELOG and
+ * .vscodeignore. The README is what shows on the Marketplace page, and
+ * images there have to be absolute URLs — relative ones don't load.
  */
 export const single = true;
 export const extension = "";
@@ -22,14 +22,14 @@ export function render(flavors, tokens) {
     {
       name: `${tokens.slug}-theme`,
       displayName: "Spacehole",
-      description: `${flavors.length} flavors — cuatro oscuros y dos claros — con contraste WCAG AA verificado.`,
+      description: `${flavors.length} flavors — four dark and two light — with verified WCAG AA contrast.`,
       version: tokens.version,
       publisher: "mrsandv",
       license: tokens.license,
       homepage: tokens.homepage,
       icon: "icon.png",
       galleryBanner: {
-        // El banner usa el fondo del flavor de marca.
+        // The banner uses the brand flavor's background.
         color: flavors.find((f) => f.primary)?.colors.bg.hex ?? "#000000",
         theme: "dark",
       },
@@ -54,7 +54,7 @@ export function render(flavors, tokens) {
   ) + "\n";
 }
 
-/** Archivos que acompañan al package.json dentro del paquete. */
+/** Files that go with package.json inside the package. */
 export function extras(flavors, tokens) {
   const dark = flavors.filter((f) => f.appearance === "dark");
   const light = flavors.filter((f) => f.appearance === "light");
@@ -62,86 +62,86 @@ export function extras(flavors, tokens) {
   const gallery = flavors
     .map(
       (f) => `### ${tokens.name} ${f.name}
-${f.tagline}. ${f.appearance === "dark" ? "Oscuro" : "Claro"}.
+${f.tagline}. ${f.appearance === "dark" ? "Dark" : "Light"}.
 
 ![${f.name}](${RAW}/ports/preview/spacehole-${f.slug}.png)
 `,
     )
     .join("\n");
 
-  // Sin logo ni título arriba: la página del Marketplace ya muestra el icono,
-  // el nombre y la descripción justo encima del README. Repetirlos deja dos
-  // logos en pantalla. Se abre directo con el preview, que es lo que la página
-  // no muestra y lo único que de verdad vende un theme.
+  // No logo or title at the top: the Marketplace page already shows the icon,
+  // name and description right above the README. Repeating them puts two
+  // logos on screen. It opens straight with the preview, which is what the
+  // page doesn't show and the only thing that really sells a theme.
   const readme = `![Spacehole Hawking](${RAW}/ports/preview/spacehole-hawking.png)
 
-**${flavors.length} flavors** — ${dark.length} oscuros, ${light.length} claros. Contraste WCAG AA verificado en cada uno.
+**${flavors.length} flavors** — ${dark.length} dark, ${light.length} light. WCAG AA contrast verified in each one.
 [spacehole.tech](${tokens.homepage})
 
-## Los flavors
+## The flavors
 
-| Flavor | Modo | Para qué |
+| Flavor | Mode | Best for |
 |---|---|---|
-| **Hawking** | oscuro | Neón sobre negro absoluto. Alto impacto. |
-| **Event Horizon** | oscuro | Vacío azul y ámbar de acreción. El de jornada larga. |
-| **Deep Void** | oscuro | Monocromo frío con un solo acento. Para concentrarse. |
-| **Background Radiation** | oscuro | Cinta analógica, neón desaturado. |
-| **Photon Sphere** | claro | Cálido, sobre papel. Cansa menos con sol de frente. |
-| **White Dwarf** | claro | Frío y nítido, alto contraste. |
+| **Hawking** | dark | Neon on absolute black. High impact. |
+| **Event Horizon** | dark | Blue void and accretion amber. The one for long days. |
+| **Deep Void** | dark | Cold monochrome with a single accent. For focus. |
+| **Background Radiation** | dark | Analog tape, desaturated neon. |
+| **Photon Sphere** | light | Warm, on paper. Easier on the eyes in direct sunlight. |
+| **White Dwarf** | light | Cold and crisp, high contrast. |
 
-## Instalar
+## Install
 
-1. Abre **Extensiones** (\`⇧⌘X\` / \`Ctrl+Shift+X\`)
-2. Busca **Spacehole**
-3. **Install**, y luego \`⌘K ⌘T\` / \`Ctrl+K Ctrl+T\` para elegir flavor
+1. Open **Extensions** (\`⇧⌘X\` / \`Ctrl+Shift+X\`)
+2. Search for **Spacehole**
+3. **Install**, then \`⌘K ⌘T\` / \`Ctrl+K Ctrl+T\` to pick a flavor
 
-O desde la paleta de comandos:
+Or from the command palette:
 
 \`\`\`
 ext install mrsandv.spacehole-theme
 \`\`\`
 
-## Contraste verificado
+## Verified contrast
 
-Los ${flavors.length} flavors cumplen **WCAG AA** en todos los roles de texto sobre su propio fondo. No es una declaración de intenciones: se verifica en cada commit y el build falla si un color no pasa.
+All ${flavors.length} flavors pass **WCAG AA** for every text role on their own background. It's not a statement of intent: it's checked on every commit, and the build fails if a color doesn't pass.
 
-Los acentos de sintaxis además se comparan entre sí con **ΔE perceptual** y no con contraste — dos colores pueden tener la misma luminancia y ser obviamente distintos, así que medir contraste ahí da falsos positivos.
+Syntax accents are also compared with each other using **perceptual ΔE** rather than contrast — two colors can have the same luminance and still be obviously different, so measuring contrast there gives false positives.
 
-## También para tu terminal
+## Also for your terminal
 
-El mismo theme, generado desde los mismos tokens, para **iTerm2**, **Ghostty**, **Alacritty**, **Windows Terminal** y **base16** (que a su vez abre cientos de ports de la comunidad).
+The same theme, generated from the same tokens, for **iTerm2**, **Ghostty**, **Alacritty**, **Windows Terminal** and **base16** (which in turn unlocks hundreds of community ports).
 
-Todo está en el [repositorio](${REPO}).
+Everything is in the [repository](${REPO}).
 
-## Cómo está hecho
+## How it's made
 
-\`palette/tokens.json\` es la única fuente de verdad. Un comando genera los themes, los ports de terminal, el CSS, el icono y el logo. Nada se edita a mano, así que un color cambiado se propaga a todo en el mismo commit.
+\`palette/tokens.json\` is the single source of truth. One command generates the themes, the terminal ports, the CSS, the icon and the logo. Nothing is edited by hand, so a changed color propagates everywhere in the same commit.
 
-Sin dependencias: Node y nada más.
+No dependencies: Node and nothing else.
 
-## Galería
+## Gallery
 
 ${gallery}
-## Licencia
+## License
 
 MIT — [Marco Sandoval](${tokens.homepage})
 `;
 
   const changelog = `# Changelog
 
-Este proyecto sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
-y [SemVer](https://semver.org/lang/es/).
+This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
+and [SemVer](https://semver.org/).
 
 ## [${tokens.version}] — 2026-08-26
 
-### Añadido
+### Added
 
-- Primera publicación con ${flavors.length} flavors: ${flavors.map((f) => f.name).join(", ")}.
-- Contraste WCAG AA verificado en los ${flavors.length} flavors, comprobado en CI.
-- Resaltado semántico (\`semanticHighlighting\`) activo.
+- First release with ${flavors.length} flavors: ${flavors.map((f) => f.name).join(", ")}.
+- WCAG AA contrast verified in all ${flavors.length} flavors, checked in CI.
+- Semantic highlighting (\`semanticHighlighting\`) enabled.
 `;
 
-  // Lo que NO viaja dentro del .vsix.
+  // What does NOT ship inside the .vsix.
   const ignore = `.vscode/**
 .github/**
 node_modules/**
@@ -153,8 +153,8 @@ node_modules/**
     "CHANGELOG.md": changelog,
     ".vscodeignore": ignore,
     "LICENSE": readFileSync(join(ROOT, "LICENSE"), "utf8"),
-    // El logo de marca, no el símbolo generado: es obra de diseño y vive en
-    // brand/ como archivo. Ver brand/README.md.
+    // The brand logo, not the generated symbol: it's a piece of design work
+    // and lives in brand/ as a file. See brand/README.md.
     "icon.png": readFileSync(join(ROOT, "brand", "icon.png")),
   };
 }

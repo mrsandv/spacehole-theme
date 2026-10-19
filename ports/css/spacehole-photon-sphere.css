@@ -1,26 +1,26 @@
-/* Spacehole Photon Sphere — Luz atrapada en órbita
-   Generado desde palette/tokens.json. No editar a mano. */
+/* Spacehole Photon Sphere — Light trapped in orbit
+   Generated from palette/tokens.json. Do not edit by hand. */
 [data-theme="spacehole-photon-sphere"] {
   color-scheme: light;
-  --sh-bg: #DCD7C9; /* órbita */
-  --sh-bg-alt: #D0CABA; /* superficie */
-  --sh-bg-elevated: #E6E2D8; /* elevado */
-  --sh-selection: #C2BBA6; /* captura */
-  --sh-border: #BCB5A3; /* límite */
-  --sh-muted: #545D60; /* sombra */
+  --sh-bg: #DCD7C9; /* orbit */
+  --sh-bg-alt: #D0CABA; /* surface */
+  --sh-bg-elevated: #E6E2D8; /* elevated */
+  --sh-selection: #C2BBA6; /* capture */
+  --sh-border: #BCB5A3; /* boundary */
+  --sh-muted: #545D60; /* shadow */
   --sh-subtext: #3E484B; /* penumbra */
   --sh-fg: #2C3639; /* slate */
-  --sh-fg-bright: #1A2224; /* tinta */
+  --sh-fg-bright: #1A2224; /* ink */
   --sh-keyword: #7A4E27; /* copper */
   --sh-function: #1F5F66; /* teal */
-  --sh-string: #42611F; /* olivo */
-  --sh-constant: #5E3A7A; /* ciruela */
-  --sh-type: #2A4C7A; /* cobalto */
-  --sh-operator: #6B4A2A; /* flujo */
-  --sh-error: #8F2F2F; /* ladrillo */
-  --sh-warning: #6F5313; /* aviso */
-  --sh-success: #42611F; /* estable */
-  --sh-info: #1F5F66; /* señal */
+  --sh-string: #42611F; /* olive */
+  --sh-constant: #5E3A7A; /* plum */
+  --sh-type: #2A4C7A; /* cobalt */
+  --sh-operator: #6B4A2A; /* flux */
+  --sh-error: #8F2F2F; /* brick */
+  --sh-warning: #6F5313; /* notice */
+  --sh-success: #42611F; /* stable */
+  --sh-info: #1F5F66; /* signal */
 
   --sh-ansi-black: #2C3639;
   --sh-ansi-red: #8F2F2F;

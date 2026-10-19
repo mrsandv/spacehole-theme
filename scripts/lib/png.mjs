@@ -1,12 +1,12 @@
 import { deflateSync } from "node:zlib";
 
 /**
- * Encoder PNG mínimo (RGBA de 8 bits, sin interlace).
+ * Minimal PNG encoder (8-bit RGBA, no interlace).
  *
- * Existe para no depender de herramientas externas: `qlmanage` solo está en
- * macOS y añade padding que descentra el icono, e ImageMagick no está en la
- * máquina ni en el runner de CI. Con esto el icono se regenera igual en
- * cualquier plataforma, como el resto de los ports.
+ * It exists to avoid external tools: `qlmanage` only exists on macOS and adds
+ * padding that off-centers the icon, and ImageMagick isn't on the machine or
+ * the CI runner. With this, the icon regenerates the same way on any
+ * platform, like the rest of the ports.
  */
 
 const CRC_TABLE = (() => {
@@ -37,20 +37,20 @@ function chunk(type, data) {
 /**
  * @param {number} width
  * @param {number} height
- * @param {Uint8Array} rgba  width*height*4, sin byte de filtro
+ * @param {Uint8Array} rgba  width*height*4, without the filter byte
  * @returns {Buffer}
  */
 export function encodePng(width, height, rgba) {
   const ihdr = Buffer.alloc(13);
   ihdr.writeUInt32BE(width, 0);
   ihdr.writeUInt32BE(height, 4);
-  ihdr[8] = 8;  // bits por canal
+  ihdr[8] = 8;  // bits per channel
   ihdr[9] = 6;  // RGBA
   ihdr[10] = 0; // deflate
-  ihdr[11] = 0; // filtro adaptativo
-  ihdr[12] = 0; // sin interlace
+  ihdr[11] = 0; // adaptive filtering
+  ihdr[12] = 0; // no interlace
 
-  // Cada scanline lleva delante su byte de filtro; 0 = sin filtrar.
+  // Each scanline starts with its filter byte; 0 = unfiltered.
   const stride = width * 4;
   const raw = Buffer.alloc((stride + 1) * height);
   for (let y = 0; y < height; y++) {

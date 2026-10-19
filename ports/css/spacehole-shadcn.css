@@ -1,31 +1,31 @@
-/* Spacehole — generado desde palette/tokens.json. No editar a mano.
+/* Spacehole — generated from palette/tokens.json. Do not edit by hand.
    https://spacehole.tech */
 
 @custom-variant dark (&:is([data-theme="hawking"] *, [data-theme="event-horizon"] *, [data-theme="deep-void"] *, [data-theme="background-radiation"] *));
 
-/* Hawking — Radiación neón sobre vacío */
+/* Hawking — Neon radiation over the void */
 [data-theme="hawking"] {
   color-scheme: dark;
 
-  --sh-bg: #000000; /* singularidad */
-  --sh-bg-alt: #0D0714; /* superficie */
-  --sh-bg-elevated: #160C21; /* elevado */
-  --sh-selection: #2E1A42; /* captura */
-  --sh-border: #241633; /* límite */
-  --sh-muted: #8873A4; /* polvo */
+  --sh-bg: #000000; /* singularity */
+  --sh-bg-alt: #0D0714; /* surface */
+  --sh-bg-elevated: #160C21; /* elevated */
+  --sh-selection: #2E1A42; /* capture */
+  --sh-border: #241633; /* boundary */
+  --sh-muted: #8873A4; /* dust */
   --sh-subtext: #B7A6CC; /* halo */
-  --sh-fg: #E8E0F0; /* emisión */
-  --sh-fg-bright: #FFFFFF; /* destello */
-  --sh-keyword: #FF2E97; /* radiación */
-  --sh-function: #00F0FF; /* horizonte */
+  --sh-fg: #E8E0F0; /* emission */
+  --sh-fg-bright: #FFFFFF; /* flare */
+  --sh-keyword: #FF2E97; /* radiation */
+  --sh-function: #00F0FF; /* horizon */
   --sh-string: #00FF9C; /* plasma */
-  --sh-constant: #C77BFF; /* cuántico */
-  --sh-type: #FFD426; /* fotón */
-  --sh-operator: #FF6FC0; /* flujo */
-  --sh-error: #FF4D6D; /* colapso */
-  --sh-warning: #FFD426; /* alerta */
-  --sh-success: #00FF9C; /* estable */
-  --sh-info: #00F0FF; /* señal */
+  --sh-constant: #C77BFF; /* quantum */
+  --sh-type: #FFD426; /* photon */
+  --sh-operator: #FF6FC0; /* flux */
+  --sh-error: #FF4D6D; /* collapse */
+  --sh-warning: #FFD426; /* alert */
+  --sh-success: #00FF9C; /* stable */
+  --sh-info: #00F0FF; /* signal */
 
   --background: #000000;
   --foreground: #E8E0F0;
@@ -61,29 +61,29 @@
   --sidebar-ring: #FF2E97;
 }
 
-/* Event Horizon — Vacío y disco de acreción */
+/* Event Horizon — Void and accretion disk */
 [data-theme="event-horizon"] {
   color-scheme: dark;
 
-  --sh-bg: #0B0E14; /* vacío */
-  --sh-bg-alt: #131822; /* superficie */
-  --sh-bg-elevated: #1A2130; /* elevado */
-  --sh-selection: #24304A; /* captura */
-  --sh-border: #1F2733; /* límite */
-  --sh-muted: #7C8798; /* polvo */
+  --sh-bg: #0B0E14; /* void */
+  --sh-bg-alt: #131822; /* surface */
+  --sh-bg-elevated: #1A2130; /* elevated */
+  --sh-selection: #24304A; /* capture */
+  --sh-border: #1F2733; /* boundary */
+  --sh-muted: #7C8798; /* dust */
   --sh-subtext: #9BA6B8; /* halo */
-  --sh-fg: #C9D1E0; /* luz estelar */
-  --sh-fg-bright: #EAF0FA; /* destello */
-  --sh-keyword: #F2A65A; /* acreción */
+  --sh-fg: #C9D1E0; /* starlight */
+  --sh-fg-bright: #EAF0FA; /* flare */
+  --sh-keyword: #F2A65A; /* accretion */
   --sh-function: #5FD3D8; /* jets */
-  --sh-string: #9ECE6A; /* gas frío */
-  --sh-constant: #A78BFA; /* nebulosa */
+  --sh-string: #9ECE6A; /* cold gas */
+  --sh-constant: #A78BFA; /* nebula */
   --sh-type: #F2D08A; /* corona */
-  --sh-operator: #E8B98A; /* flujo */
+  --sh-operator: #E8B98A; /* flux */
   --sh-error: #F26D7D; /* redshift */
-  --sh-warning: #F2C14E; /* alerta */
-  --sh-success: #9ECE6A; /* estable */
-  --sh-info: #5FD3D8; /* señal */
+  --sh-warning: #F2C14E; /* alert */
+  --sh-success: #9ECE6A; /* stable */
+  --sh-info: #5FD3D8; /* signal */
 
   --background: #0B0E14;
   --foreground: #C9D1E0;
@@ -119,29 +119,29 @@
   --sidebar-ring: #F2A65A;
 }
 
-/* Deep Void — Monocromo frío con un solo acento */
+/* Deep Void — Cold monochrome with a single accent */
 [data-theme="deep-void"] {
   color-scheme: dark;
 
-  --sh-bg: #080A0F; /* vacío */
-  --sh-bg-alt: #10141C; /* superficie */
-  --sh-bg-elevated: #161C26; /* elevado */
-  --sh-selection: #223046; /* captura */
-  --sh-border: #1A2029; /* límite */
-  --sh-muted: #757F8E; /* polvo */
+  --sh-bg: #080A0F; /* void */
+  --sh-bg-alt: #10141C; /* surface */
+  --sh-bg-elevated: #161C26; /* elevated */
+  --sh-selection: #223046; /* capture */
+  --sh-border: #1A2029; /* boundary */
+  --sh-muted: #757F8E; /* dust */
   --sh-subtext: #93A0B0; /* halo */
-  --sh-fg: #B8C0CC; /* niebla */
-  --sh-fg-bright: #DDE4EC; /* destello */
-  --sh-keyword: #7DD3FC; /* hielo */
-  --sh-function: #A9B6C6; /* escala 1 */
-  --sh-string: #8492A4; /* escala 2 */
-  --sh-constant: #6C7A8C; /* escala 3 */
-  --sh-type: #9FC4DC; /* escarcha */
-  --sh-operator: #8FA3B8; /* flujo */
-  --sh-error: #E88796; /* alarma */
-  --sh-warning: #D9B88A; /* aviso */
-  --sh-success: #8FBF9F; /* estable */
-  --sh-info: #7DD3FC; /* señal */
+  --sh-fg: #B8C0CC; /* mist */
+  --sh-fg-bright: #DDE4EC; /* flare */
+  --sh-keyword: #7DD3FC; /* ice */
+  --sh-function: #A9B6C6; /* scale 1 */
+  --sh-string: #8492A4; /* scale 2 */
+  --sh-constant: #6C7A8C; /* scale 3 */
+  --sh-type: #9FC4DC; /* frost */
+  --sh-operator: #8FA3B8; /* flux */
+  --sh-error: #E88796; /* alarm */
+  --sh-warning: #D9B88A; /* notice */
+  --sh-success: #8FBF9F; /* stable */
+  --sh-info: #7DD3FC; /* signal */
 
   --background: #080A0F;
   --foreground: #B8C0CC;
@@ -177,29 +177,29 @@
   --sidebar-ring: #7DD3FC;
 }
 
-/* Background Radiation — Cinta analógica, estática cósmica */
+/* Background Radiation — Analog tape, cosmic static */
 :where(:root),
 [data-theme="background-radiation"] {
   color-scheme: dark;
 
-  --sh-bg: #14101A; /* cinta */
-  --sh-bg-alt: #1D1826; /* superficie */
-  --sh-bg-elevated: #262034; /* elevado */
-  --sh-selection: #3A2F4E; /* captura */
-  --sh-border: #2E2740; /* límite */
-  --sh-muted: #8F84A3; /* ruido */
+  --sh-bg: #14101A; /* tape */
+  --sh-bg-alt: #1D1826; /* surface */
+  --sh-bg-elevated: #262034; /* elevated */
+  --sh-selection: #3A2F4E; /* capture */
+  --sh-border: #2E2740; /* boundary */
+  --sh-muted: #8F84A3; /* noise */
   --sh-subtext: #ADA2C0; /* halo */
-  --sh-fg: #D8D0E0; /* señal */
-  --sh-fg-bright: #F0EAF7; /* destello */
+  --sh-fg: #D8D0E0; /* signal */
+  --sh-fg-bright: #F0EAF7; /* flare */
   --sh-keyword: #E07BAE; /* chroma */
   --sh-function: #6FCEDE; /* tracking */
-  --sh-string: #8FD9A0; /* fósforo */
-  --sh-constant: #E0B072; /* ámbar */
+  --sh-string: #8FD9A0; /* phosphor */
+  --sh-constant: #E0B072; /* amber */
   --sh-type: #C9A0E0; /* scanline */
-  --sh-operator: #D69AC0; /* flujo */
+  --sh-operator: #D69AC0; /* flux */
   --sh-error: #E08494; /* dropout */
-  --sh-warning: #E0B072; /* aviso */
-  --sh-success: #8FD9A0; /* estable */
+  --sh-warning: #E0B072; /* notice */
+  --sh-success: #8FD9A0; /* stable */
   --sh-info: #6FCEDE; /* sync */
 
   --background: #14101A;
@@ -236,29 +236,29 @@
   --sidebar-ring: #E07BAE;
 }
 
-/* Photon Sphere — Luz atrapada en órbita */
+/* Photon Sphere — Light trapped in orbit */
 [data-theme="photon-sphere"] {
   color-scheme: light;
 
-  --sh-bg: #DCD7C9; /* órbita */
-  --sh-bg-alt: #D0CABA; /* superficie */
-  --sh-bg-elevated: #E6E2D8; /* elevado */
-  --sh-selection: #C2BBA6; /* captura */
-  --sh-border: #BCB5A3; /* límite */
-  --sh-muted: #545D60; /* sombra */
+  --sh-bg: #DCD7C9; /* orbit */
+  --sh-bg-alt: #D0CABA; /* surface */
+  --sh-bg-elevated: #E6E2D8; /* elevated */
+  --sh-selection: #C2BBA6; /* capture */
+  --sh-border: #BCB5A3; /* boundary */
+  --sh-muted: #545D60; /* shadow */
   --sh-subtext: #3E484B; /* penumbra */
   --sh-fg: #2C3639; /* slate */
-  --sh-fg-bright: #1A2224; /* tinta */
+  --sh-fg-bright: #1A2224; /* ink */
   --sh-keyword: #7A4E27; /* copper */
   --sh-function: #1F5F66; /* teal */
-  --sh-string: #42611F; /* olivo */
-  --sh-constant: #5E3A7A; /* ciruela */
-  --sh-type: #2A4C7A; /* cobalto */
-  --sh-operator: #6B4A2A; /* flujo */
-  --sh-error: #8F2F2F; /* ladrillo */
-  --sh-warning: #6F5313; /* aviso */
-  --sh-success: #42611F; /* estable */
-  --sh-info: #1F5F66; /* señal */
+  --sh-string: #42611F; /* olive */
+  --sh-constant: #5E3A7A; /* plum */
+  --sh-type: #2A4C7A; /* cobalt */
+  --sh-operator: #6B4A2A; /* flux */
+  --sh-error: #8F2F2F; /* brick */
+  --sh-warning: #6F5313; /* notice */
+  --sh-success: #42611F; /* stable */
+  --sh-info: #1F5F66; /* signal */
 
   --background: #DCD7C9;
   --foreground: #2C3639;
@@ -294,29 +294,29 @@
   --sidebar-ring: #7A4E27;
 }
 
-/* White Dwarf — Carbono cristalizado, luz fría */
+/* White Dwarf — Crystallized carbon, cold light */
 [data-theme="white-dwarf"] {
   color-scheme: light;
 
-  --sh-bg: #F6F8FB; /* enana */
-  --sh-bg-alt: #EBEFF5; /* superficie */
-  --sh-bg-elevated: #FFFFFF; /* elevado */
-  --sh-selection: #D3E0F5; /* captura */
-  --sh-border: #D5DCE6; /* límite */
-  --sh-muted: #5C6675; /* sombra */
+  --sh-bg: #F6F8FB; /* dwarf */
+  --sh-bg-alt: #EBEFF5; /* surface */
+  --sh-bg-elevated: #FFFFFF; /* elevated */
+  --sh-selection: #D3E0F5; /* capture */
+  --sh-border: #D5DCE6; /* boundary */
+  --sh-muted: #5C6675; /* shadow */
   --sh-subtext: #3A4350; /* penumbra */
-  --sh-fg: #171C24; /* carbono */
-  --sh-fg-bright: #000000; /* núcleo */
-  --sh-keyword: #6D28D9; /* degeneración */
-  --sh-function: #0E7C86; /* espectro */
-  --sh-string: #2F7A2F; /* emisión */
+  --sh-fg: #171C24; /* carbon */
+  --sh-fg-bright: #000000; /* core */
+  --sh-keyword: #6D28D9; /* degeneracy */
+  --sh-function: #0E7C86; /* spectrum */
+  --sh-string: #2F7A2F; /* emission */
   --sh-constant: #B45309; /* corona */
-  --sh-type: #7C3AAD; /* absorción */
-  --sh-operator: #455467; /* flujo */
-  --sh-error: #B3261E; /* colapso */
-  --sh-warning: #96660A; /* aviso */
-  --sh-success: #2F7A2F; /* estable */
-  --sh-info: #0E7C86; /* señal */
+  --sh-type: #7C3AAD; /* absorption */
+  --sh-operator: #455467; /* flux */
+  --sh-error: #B3261E; /* collapse */
+  --sh-warning: #96660A; /* notice */
+  --sh-success: #2F7A2F; /* stable */
+  --sh-info: #0E7C86; /* signal */
 
   --background: #F6F8FB;
   --foreground: #171C24;
@@ -353,9 +353,9 @@
 }
 
 /* ── Shiki multi-theme ──────────────────────────────────────
-   El HTML se resalta una sola vez en el servidor con los seis themes;
-   cada bloque lleva una variable por flavor y aquí se activa la del
-   flavor vigente. Cambiar de theme no re-renderiza nada. */
+   The HTML is highlighted once on the server with all six themes;
+   each block carries one variable per flavor, and this enables the
+   active flavor's. Switching themes doesn't re-render anything. */
 [data-theme="hawking"] .shiki,
 [data-theme="hawking"] .shiki span {
   color: var(--sh-shiki-hawking) !important;

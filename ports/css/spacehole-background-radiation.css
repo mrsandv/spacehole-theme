@@ -1,25 +1,25 @@
-/* Spacehole Background Radiation — Cinta analógica, estática cósmica
-   Generado desde palette/tokens.json. No editar a mano. */
+/* Spacehole Background Radiation — Analog tape, cosmic static
+   Generated from palette/tokens.json. Do not edit by hand. */
 [data-theme="spacehole-background-radiation"] {
   color-scheme: dark;
-  --sh-bg: #14101A; /* cinta */
-  --sh-bg-alt: #1D1826; /* superficie */
-  --sh-bg-elevated: #262034; /* elevado */
-  --sh-selection: #3A2F4E; /* captura */
-  --sh-border: #2E2740; /* límite */
-  --sh-muted: #8F84A3; /* ruido */
+  --sh-bg: #14101A; /* tape */
+  --sh-bg-alt: #1D1826; /* surface */
+  --sh-bg-elevated: #262034; /* elevated */
+  --sh-selection: #3A2F4E; /* capture */
+  --sh-border: #2E2740; /* boundary */
+  --sh-muted: #8F84A3; /* noise */
   --sh-subtext: #ADA2C0; /* halo */
-  --sh-fg: #D8D0E0; /* señal */
-  --sh-fg-bright: #F0EAF7; /* destello */
+  --sh-fg: #D8D0E0; /* signal */
+  --sh-fg-bright: #F0EAF7; /* flare */
   --sh-keyword: #E07BAE; /* chroma */
   --sh-function: #6FCEDE; /* tracking */
-  --sh-string: #8FD9A0; /* fósforo */
-  --sh-constant: #E0B072; /* ámbar */
+  --sh-string: #8FD9A0; /* phosphor */
+  --sh-constant: #E0B072; /* amber */
   --sh-type: #C9A0E0; /* scanline */
-  --sh-operator: #D69AC0; /* flujo */
+  --sh-operator: #D69AC0; /* flux */
   --sh-error: #E08494; /* dropout */
-  --sh-warning: #E0B072; /* aviso */
-  --sh-success: #8FD9A0; /* estable */
+  --sh-warning: #E0B072; /* notice */
+  --sh-success: #8FD9A0; /* stable */
   --sh-info: #6FCEDE; /* sync */
 
   --sh-ansi-black: #1D1826;

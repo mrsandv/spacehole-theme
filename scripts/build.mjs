@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Genera todos los ports desde palette/tokens.json.
- * Nada en ports/ se edita a mano: este script es el único que escribe ahí.
+ * Generates every port from palette/tokens.json.
+ * Nothing in ports/ is edited by hand: this script is the only thing that writes there.
  */
 import { mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
@@ -15,7 +15,7 @@ const tokens = loadTokens();
 const flavors = flavorList(tokens);
 const portsDir = join(ROOT, "ports");
 
-// Borrón y cuenta nueva: si un flavor desaparece de tokens, su port también.
+// Clean slate: if a flavor disappears from tokens, its port goes too.
 rmSync(portsDir, { recursive: true, force: true });
 mkdirSync(portsDir, { recursive: true });
 
@@ -27,16 +27,16 @@ for (const name of TEMPLATES) {
   const dir = join(portsDir, tpl.outDir);
   mkdirSync(dir, { recursive: true });
 
-  // Algunos templates producen un solo archivo con todos los flavors dentro.
+  // Some templates produce a single file with every flavor inside.
   if (tpl.single) {
     const out = tpl.render(flavors, tokens);
     writeFileSync(join(dir, tpl.filename), out, "utf8");
     count++;
 
-    // Algunos templates traen compañía: README, licencia, changelog…
+    // Some templates come with companions: README, license, changelog…
     if (tpl.extraFiles) {
       for (const [file, body] of Object.entries(tpl.extras(flavors, tokens))) {
-        // Los extras binarios (el icono) llegan como Buffer.
+        // Binary extras (the icon) arrive as a Buffer.
         writeFileSync(join(dir, file), body, Buffer.isBuffer(body) ? undefined : "utf8");
         count++;
       }
@@ -54,7 +54,7 @@ for (const name of TEMPLATES) {
 
     const out = tpl.render(flavor, tokens);
 
-    // Los templates binarios (PNG) devuelven Buffer y se escriben tal cual.
+    // Binary templates (PNG) return a Buffer and are written as is.
     if (tpl.binary) {
       writeFileSync(join(dir, file), out);
     } else {
@@ -63,8 +63,8 @@ for (const name of TEMPLATES) {
     }
     count++;
   }
-  summary.push(`  ${name.padEnd(18)} ${flavors.length} archivos`);
+  summary.push(`  ${name.padEnd(18)} ${flavors.length} files`);
 }
 
-console.log(`✓ ${count} archivos generados en ports/\n`);
+console.log(`✓ ${count} files generated in ports/\n`);
 console.log(summary.join("\n"));

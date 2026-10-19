@@ -5,29 +5,33 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   palette:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
+          package-manager-cache: false
 
-      # Ningún color entra si no cumple WCAG AA sobre su propio fondo.
-      - name: Validar contraste y estructura
+      # No color gets in unless it passes WCAG AA on its own background.
+      - name: Validate contrast and structure
         run: node scripts/validate.mjs
 
-      - name: Generar ports
+      - name: Generate ports
         run: node scripts/build.mjs
 
-      # Si esto falla es que alguien editó ports/ a mano en vez de tokens.json.
-      - name: Verificar que ports/ está al día
+      # If this fails, someone edited ports/ by hand instead of tokens.json.
+      - name: Check that ports/ is up to date
         run: |
           if [ -n "$(git status --porcelain ports/)" ]; then
-            echo "::error::ports/ no coincide con palette/tokens.json."
-            echo "Corre 'npm run build' y commitea el resultado."
+            echo "::error::ports/ does not match palette/tokens.json."
+            echo "Run 'npm run build' and commit the result."
             git --no-pager diff --stat ports/
             exit 1
           fi
-          echo "ports/ al día"
+          echo "ports/ is up to date"

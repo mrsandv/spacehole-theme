@@ -1,26 +1,26 @@
-/* Spacehole White Dwarf — Carbono cristalizado, luz fría
-   Generado desde palette/tokens.json. No editar a mano. */
+/* Spacehole White Dwarf — Crystallized carbon, cold light
+   Generated from palette/tokens.json. Do not edit by hand. */
 [data-theme="spacehole-white-dwarf"] {
   color-scheme: light;
-  --sh-bg: #F6F8FB; /* enana */
-  --sh-bg-alt: #EBEFF5; /* superficie */
-  --sh-bg-elevated: #FFFFFF; /* elevado */
-  --sh-selection: #D3E0F5; /* captura */
-  --sh-border: #D5DCE6; /* límite */
-  --sh-muted: #5C6675; /* sombra */
+  --sh-bg: #F6F8FB; /* dwarf */
+  --sh-bg-alt: #EBEFF5; /* surface */
+  --sh-bg-elevated: #FFFFFF; /* elevated */
+  --sh-selection: #D3E0F5; /* capture */
+  --sh-border: #D5DCE6; /* boundary */
+  --sh-muted: #5C6675; /* shadow */
   --sh-subtext: #3A4350; /* penumbra */
-  --sh-fg: #171C24; /* carbono */
-  --sh-fg-bright: #000000; /* núcleo */
-  --sh-keyword: #6D28D9; /* degeneración */
-  --sh-function: #0E7C86; /* espectro */
-  --sh-string: #2F7A2F; /* emisión */
+  --sh-fg: #171C24; /* carbon */
+  --sh-fg-bright: #000000; /* core */
+  --sh-keyword: #6D28D9; /* degeneracy */
+  --sh-function: #0E7C86; /* spectrum */
+  --sh-string: #2F7A2F; /* emission */
   --sh-constant: #B45309; /* corona */
-  --sh-type: #7C3AAD; /* absorción */
-  --sh-operator: #455467; /* flujo */
-  --sh-error: #B3261E; /* colapso */
-  --sh-warning: #96660A; /* aviso */
-  --sh-success: #2F7A2F; /* estable */
-  --sh-info: #0E7C86; /* señal */
+  --sh-type: #7C3AAD; /* absorption */
+  --sh-operator: #455467; /* flux */
+  --sh-error: #B3261E; /* collapse */
+  --sh-warning: #96660A; /* notice */
+  --sh-success: #2F7A2F; /* stable */
+  --sh-info: #0E7C86; /* signal */
 
   --sh-ansi-black: #171C24;
   --sh-ansi-red: #B3261E;

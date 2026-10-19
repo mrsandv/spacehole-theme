@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /**
- * Valida la paleta antes de generar nada.
- * Truena (exit 1) si un color no cumple, para que CI lo detenga.
+ * Validates the palette before generating anything.
+ * Fails (exit 1) when a color doesn't pass, so CI stops it.
  */
 import { loadTokens, flavorList, hexes } from "./lib/tokens.mjs";
 import { contrast, wcagLevel, deltaE } from "./lib/color.mjs";
 
-const AA = 4.5;          // texto normal
-const AA_UI = 3.0;       // bordes y elementos no textuales
-const SELECTION_MIN = 2.0; // el texto debe seguir leyéndose sobre la selección
-const ACCENT_MIN_DELTA = 18; // ΔE mínimo entre acentos de sintaxis
-const MONOCHROME_MIN_DELTA = 8;  // los flavors monocromos aplanan a propósito
+const AA = 4.5;          // normal text
+const AA_UI = 3.0;       // borders and non-text elements
+const SELECTION_MIN = 2.0; // text must stay readable on the selection
+const ACCENT_MIN_DELTA = 18; // minimum ΔE between syntax accents
+const MONOCHROME_MIN_DELTA = 8;  // monochrome flavors flatten on purpose
 
-// Roles que se pintan como texto sobre el fondo del editor.
+// Roles painted as text on the editor background.
 const TEXT_ROLES = [
   "muted", "subtext", "fg", "fgBright", "keyword", "function", "string",
   "constant", "type", "operator", "error", "warning", "success", "info",
@@ -26,58 +26,58 @@ const warnings = [];
 for (const flavor of flavorList(tokens)) {
   const c = hexes(flavor);
 
-  // 1. Integridad: ningún rol puede faltar ni sobrar.
+  // 1. Integrity: no role can be missing or extra.
   for (const role of requiredRoles) {
-    if (!c[role]) failures.push(`${flavor.slug}: falta el rol "${role}"`);
+    if (!c[role]) failures.push(`${flavor.slug}: missing role "${role}"`);
   }
   for (const role of Object.keys(c)) {
     if (!requiredRoles.includes(role)) {
-      warnings.push(`${flavor.slug}: rol "${role}" no está declarado en roles{}`);
+      warnings.push(`${flavor.slug}: role "${role}" is not declared in roles{}`);
     }
   }
 
-  // 2. Contraste de texto contra el fondo del editor.
+  // 2. Text contrast against the editor background.
   for (const role of TEXT_ROLES) {
     if (!c[role]) continue;
     const ratio = contrast(c[role], c.bg);
     if (ratio < AA) {
       failures.push(
-        `${flavor.slug}: ${role} (${c[role]}) sobre bg → ${ratio.toFixed(2)}:1 · necesita ${AA}:1`,
+        `${flavor.slug}: ${role} (${c[role]}) on bg → ${ratio.toFixed(2)}:1 · needs ${AA}:1`,
       );
     }
   }
 
-  // 3. El texto principal debe leerse también sobre paneles y popovers.
+  // 3. Main text must also be readable on panels and popovers.
   for (const surface of ["bgAlt", "bgElevated"]) {
     const ratio = contrast(c.fg, c[surface]);
     if (ratio < AA) {
       failures.push(
-        `${flavor.slug}: fg sobre ${surface} → ${ratio.toFixed(2)}:1 · necesita ${AA}:1`,
+        `${flavor.slug}: fg on ${surface} → ${ratio.toFixed(2)}:1 · needs ${AA}:1`,
       );
     }
   }
 
-  // 4. La selección no puede tragarse el texto.
+  // 4. The selection can't swallow the text.
   const selRatio = contrast(c.fg, c.selection);
   if (selRatio < SELECTION_MIN) {
     failures.push(
-      `${flavor.slug}: fg sobre selection → ${selRatio.toFixed(2)}:1 · necesita ${SELECTION_MIN}:1`,
+      `${flavor.slug}: fg on selection → ${selRatio.toFixed(2)}:1 · needs ${SELECTION_MIN}:1`,
     );
   }
 
-  // 5. Los bordes tienen que verse contra el fondo (no es texto: AA_UI).
+  // 5. Borders have to be visible against the background (not text: AA_UI).
   const borderRatio = contrast(c.border, c.bg);
   if (borderRatio < 1.2) {
     warnings.push(
-      `${flavor.slug}: border casi invisible sobre bg → ${borderRatio.toFixed(2)}:1`,
+      `${flavor.slug}: border almost invisible on bg → ${borderRatio.toFixed(2)}:1`,
     );
   }
 
-  // 6. Los acentos deben distinguirse entre sí, o la sintaxis se aplana.
-  //    Se mide con ΔE perceptual, no con contraste: dos colores pueden tener
-  //    la misma luminancia (contraste 1:1) y ser obviamente distintos.
-  //    Un flavor declarado monochrome renuncia a esto a propósito: su gracia
-  //    es justamente que los acentos casi no se separen.
+  // 6. Accents must be distinguishable from each other, or the syntax flattens.
+  //    Measured with perceptual ΔE, not contrast: two colors can have the
+  //    same luminance (1:1 contrast) and still be obviously different.
+  //    A flavor declared monochrome gives this up on purpose: its whole point
+  //    is that the accents barely separate.
   const accents = ["keyword", "function", "string", "constant", "type"];
   const minDelta = flavor.monochrome ? MONOCHROME_MIN_DELTA : ACCENT_MIN_DELTA;
   for (let i = 0; i < accents.length; i++) {
@@ -85,33 +85,33 @@ for (const flavor of flavorList(tokens)) {
       const diff = deltaE(c[accents[i]], c[accents[j]]);
       if (diff < minDelta) {
         warnings.push(
-          `${flavor.slug}: ${accents[i]} y ${accents[j]} cuesta distinguirlos · ΔE ${diff.toFixed(1)} (mínimo ${minDelta})`,
+          `${flavor.slug}: ${accents[i]} and ${accents[j]} are hard to tell apart · ΔE ${diff.toFixed(1)} (minimum ${minDelta})`,
         );
       }
     }
   }
 }
 
-// ── Reporte ──────────────────────────────────────────────
+// ── Report ──────────────────────────────────────────────
 for (const flavor of flavorList(tokens)) {
   const c = hexes(flavor);
   const ratios = TEXT_ROLES.map((r) => contrast(c[r], c.bg));
   const worst = Math.min(...ratios);
   const mark = worst >= AA ? "✓" : "✗";
   console.log(
-    `${mark} ${flavor.name.padEnd(22)} ${flavor.appearance.padEnd(6)} peor texto ${worst.toFixed(2)}:1  ${wcagLevel(worst)}`,
+    `${mark} ${flavor.name.padEnd(22)} ${flavor.appearance.padEnd(6)} worst text ${worst.toFixed(2)}:1  ${wcagLevel(worst)}`,
   );
 }
 
 if (warnings.length) {
-  console.log(`\n⚠ ${warnings.length} aviso(s):`);
+  console.log(`\n⚠ ${warnings.length} warning(s):`);
   for (const w of warnings) console.log(`  · ${w}`);
 }
 
 if (failures.length) {
-  console.error(`\n✗ ${failures.length} error(es):`);
+  console.error(`\n✗ ${failures.length} error(s):`);
   for (const f of failures) console.error(`  · ${f}`);
   process.exit(1);
 }
 
-console.log(`\n✓ ${flavorList(tokens).length} flavors · todo el texto cumple WCAG AA`);
+console.log(`\n✓ ${flavorList(tokens).length} flavors · all text passes WCAG AA`);

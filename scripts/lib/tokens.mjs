@@ -10,14 +10,14 @@ export function loadTokens() {
   return JSON.parse(raw);
 }
 
-/** Flavors ordenados por su campo `order`, con el slug incluido. */
+/** Flavors sorted by their `order` field, with the slug included. */
 export function flavorList(tokens) {
   return Object.entries(tokens.flavors)
     .map(([slug, flavor]) => ({ slug, ...flavor }))
     .sort((a, b) => a.order - b.order);
 }
 
-/** Atajo: mapa rol → hex, sin las etiquetas. */
+/** Shortcut: role → hex map, without the labels. */
 export function hexes(flavor) {
   return Object.fromEntries(
     Object.entries(flavor.colors).map(([role, { hex }]) => [role, hex]),

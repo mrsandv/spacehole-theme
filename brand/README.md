@@ -1,15 +1,15 @@
-# Marca
+# Brand
 
-El logo de Spacehole. **No se genera**: es obra de diseño, no salida de un
-script, y por eso vive aquí como archivo y no en `ports/`.
+The Spacehole logo. **It isn't generated**: it's design work, not script
+output, which is why it lives here as a file and not in `ports/`.
 
-| Archivo | Uso |
+| File | Use |
 |---|---|
-| `icon.png` | 512×512. Icono del Marketplace de VS Code y de Open VSX. |
-| `logo.webp` | Versión con transparencia, para web. |
+| `icon.png` | 512×512. Icon for the VS Code Marketplace and Open VSX. |
+| `logo.webp` | Version with transparency, for the web. |
 
-Fuente: `portfolio/public/` — si cambia allá, hay que copiarlo aquí y volver
-a publicar la extensión.
+Source: `portfolio/public/` — if it changes there, copy it here and publish
+the extension again.
 
-Los SVG de `ports/logo/` son otra cosa: una marca tipográfica derivada de los
-tokens, útil para previews por flavor. No sustituyen a este logo.
+The SVGs in `ports/logo/` are something else: a typographic mark derived from
+the tokens, useful for per-flavor previews. They don't replace this logo.

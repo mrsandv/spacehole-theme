@@ -1,26 +1,26 @@
-/* Spacehole Deep Void — Monocromo frío con un solo acento
-   Generado desde palette/tokens.json. No editar a mano. */
+/* Spacehole Deep Void — Cold monochrome with a single accent
+   Generated from palette/tokens.json. Do not edit by hand. */
 [data-theme="spacehole-deep-void"] {
   color-scheme: dark;
-  --sh-bg: #080A0F; /* vacío */
-  --sh-bg-alt: #10141C; /* superficie */
-  --sh-bg-elevated: #161C26; /* elevado */
-  --sh-selection: #223046; /* captura */
-  --sh-border: #1A2029; /* límite */
-  --sh-muted: #757F8E; /* polvo */
+  --sh-bg: #080A0F; /* void */
+  --sh-bg-alt: #10141C; /* surface */
+  --sh-bg-elevated: #161C26; /* elevated */
+  --sh-selection: #223046; /* capture */
+  --sh-border: #1A2029; /* boundary */
+  --sh-muted: #757F8E; /* dust */
   --sh-subtext: #93A0B0; /* halo */
-  --sh-fg: #B8C0CC; /* niebla */
-  --sh-fg-bright: #DDE4EC; /* destello */
-  --sh-keyword: #7DD3FC; /* hielo */
-  --sh-function: #A9B6C6; /* escala 1 */
-  --sh-string: #8492A4; /* escala 2 */
-  --sh-constant: #6C7A8C; /* escala 3 */
-  --sh-type: #9FC4DC; /* escarcha */
-  --sh-operator: #8FA3B8; /* flujo */
-  --sh-error: #E88796; /* alarma */
-  --sh-warning: #D9B88A; /* aviso */
-  --sh-success: #8FBF9F; /* estable */
-  --sh-info: #7DD3FC; /* señal */
+  --sh-fg: #B8C0CC; /* mist */
+  --sh-fg-bright: #DDE4EC; /* flare */
+  --sh-keyword: #7DD3FC; /* ice */
+  --sh-function: #A9B6C6; /* scale 1 */
+  --sh-string: #8492A4; /* scale 2 */
+  --sh-constant: #6C7A8C; /* scale 3 */
+  --sh-type: #9FC4DC; /* frost */
+  --sh-operator: #8FA3B8; /* flux */
+  --sh-error: #E88796; /* alarm */
+  --sh-warning: #D9B88A; /* notice */
+  --sh-success: #8FBF9F; /* stable */
+  --sh-info: #7DD3FC; /* signal */
 
   --sh-ansi-black: #10141C;
   --sh-ansi-red: #E88796;

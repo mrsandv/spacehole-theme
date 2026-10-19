@@ -1,12 +1,12 @@
 import { mix, deltaE } from "../scripts/lib/color.mjs";
 
 /**
- * Spec base16 de tinted-theming: 16 slots que dan cientos de ports gratis.
+ * tinted-theming's base16 spec: 16 slots that unlock hundreds of free ports.
  *
- * Los 16 slots tienen que ser distinguibles entre sí: si dos colapsan, cada
- * port derivado pierde una categoría. Nuestra paleta reutiliza colores a
- * propósito (info y function pueden ser el mismo cyan), así que aquí los
- * separamos lo justo para que el slot exista, sin romper la identidad.
+ * The 16 slots must be distinguishable from each other: if two collapse,
+ * every derived port loses a category. Our palette reuses colors on purpose
+ * (info and function can be the same cyan), so here we separate them just
+ * enough for the slot to exist, without breaking the identity.
  */
 export const extension = "yaml";
 export const outDir = "base16";
@@ -16,9 +16,9 @@ const bare = (hex) => hex.replace("#", "").toLowerCase();
 const MIN_DELTA = 8;
 
 /**
- * Garantiza que cada acento sea distinguible de todos los ya asignados.
- * Compara contra la lista completa, no contra un solo vecino: en un flavor
- * monocromo el mismo color puede querer ocupar tres slots distintos.
+ * Ensures each accent is distinguishable from every one already assigned.
+ * It compares against the whole list, not a single neighbor: in a monochrome
+ * flavor the same color may want to fill three different slots.
  */
 function separate(color, taken, toward) {
   let out = color;
@@ -36,28 +36,28 @@ export function render(flavor, tokens) {
   const dark = flavor.appearance === "dark";
   const edge = dark ? "#FFFFFF" : "#000000";
 
-  // Los ocho acentos (08–0F) se asignan en orden, separando el que colisione.
+  // The eight accents (08–0F) are assigned in order, separating any that collide.
   const accents = {};
   const push = (slot, color, toward = edge) => {
     accents[slot] = separate(color, Object.values(accents), toward);
   };
-  push("base08", c.error);       // variables, borrados
-  push("base09", c.constant);    // números, constantes
-  push("base0A", c.type);        // clases, búsqueda
-  push("base0B", c.string);      // cadenas
-  push("base0D", c.function);    // funciones
-  push("base0E", c.keyword);     // palabras reservadas
-  push("base0C", c.info, c.fg);  // soporte, regex
-  push("base0F", c.operator);    // obsoleto, delimitadores
+  push("base08", c.error);       // variables, deletions
+  push("base09", c.constant);    // numbers, constants
+  push("base0A", c.type);        // classes, search
+  push("base0B", c.string);      // strings
+  push("base0D", c.function);    // functions
+  push("base0E", c.keyword);     // reserved words
+  push("base0C", c.info, c.fg);  // support, regex
+  push("base0F", c.operator);    // deprecated, delimiters
 
   const palette = {
-    base00: c.bg,                          // fondo por defecto
-    base01: c.bgAlt,                       // fondo secundario, status bar
-    base02: c.selection,                   // selección
-    base03: c.muted,                       // comentarios, invisibles
-    base04: c.subtext,                     // foreground apagado
-    base05: c.fg,                          // foreground por defecto
-    base06: mix(c.fg, c.fgBright, 0.5),    // foreground claro
+    base00: c.bg,                          // default background
+    base01: c.bgAlt,                       // secondary background, status bar
+    base02: c.selection,                   // selection
+    base03: c.muted,                       // comments, invisibles
+    base04: c.subtext,                     // dimmed foreground
+    base05: c.fg,                          // default foreground
+    base06: mix(c.fg, c.fgBright, 0.5),    // light foreground
     base07: dark ? c.fgBright : c.bgElevated,
     base08: accents.base08,
     base09: accents.base09,

@@ -2,15 +2,15 @@ import { encodePng } from "../scripts/lib/png.mjs";
 import { hexToRgb } from "../scripts/lib/color.mjs";
 
 /**
- * Preview de cada flavor para el README del Marketplace y el sitio.
+ * Preview of each flavor for the Marketplace README and the site.
  *
- * Es una ventana de editor esquemática: cada línea de "código" es una barra
- * del color que ese rol tendría de verdad. No sustituye a una captura real,
- * pero comunica la distribución de color del theme de un vistazo y se genera
- * sola — una captura hay que rehacerla a mano cada vez que cambia un color.
+ * It's a schematic editor window: each line of "code" is a bar in the color
+ * that role would really have. It doesn't replace a real screenshot, but it
+ * shows the theme's color distribution at a glance and generates itself — a
+ * screenshot has to be redone by hand every time a color changes.
  *
- * Se dibuja con rectángulos porque rasterizar texto exigiría embeber una
- * fuente y un motor de glifos, que es justo la dependencia que este repo evita.
+ * It's drawn with rectangles because rasterizing text would mean embedding a
+ * font and a glyph engine, which is exactly the dependency this repo avoids.
  */
 export const binary = true;
 export const extension = "png";
@@ -22,7 +22,7 @@ const H = 420;
 const SIDEBAR = 148;
 const TITLEBAR = 34;
 
-/** Estructura de un archivo real: indentación, longitud y rol por token. */
+/** Structure of a real file: indentation, length and role per token. */
 const LINES = [
   [[0, 8, "muted"], [9, 30, "muted"]],
   [],
@@ -45,9 +45,9 @@ const LINES = [
   [[0, 6, "keyword"], [7, 12, "function"], [19, 2, "operator"], [22, 9, "constant"]],
 ];
 
-const CH = 7.2;   // ancho de carácter
-const LH = 15;    // alto de línea
-const BAR = 7;    // grosor de la barra
+const CH = 7.2;   // character width
+const LH = 15;    // line height
+const BAR = 7;    // bar thickness
 
 export function render(flavor) {
   const hex = Object.fromEntries(
@@ -77,7 +77,7 @@ export function render(flavor) {
   fill(SIDEBAR, 0, 1, H, rgb.border);
   fill(0, TITLEBAR, W, 1, rgb.border);
 
-  // Semáforo de la barra de título.
+  // Title bar traffic lights.
   for (const [i, role] of ["error", "warning", "success"].entries()) {
     const cx = 18 + i * 18;
     const cy = TITLEBAR / 2;
@@ -88,7 +88,7 @@ export function render(flavor) {
     }
   }
 
-  // Árbol de archivos: barras tenues, una destacada como archivo abierto.
+  // File tree: faint bars, one highlighted as the open file.
   for (let i = 0; i < 11; i++) {
     const y = TITLEBAR + 22 + i * 22;
     const indent = i === 0 ? 0 : 12;
@@ -97,14 +97,14 @@ export function render(flavor) {
     fill(16 + indent, y, 60 + ((i * 23) % 46), 6, active ? rgb.fg : rgb.muted, active ? 1 : 0.55);
   }
 
-  // Cuerpo del editor.
+  // Editor body.
   const top = TITLEBAR + 26;
   const left = SIDEBAR + 46;
   LINES.forEach((tokens, i) => {
     const y = top + i * LH;
     if (y + BAR > H - 10) return;
 
-    // Números de línea.
+    // Line numbers.
     fill(SIDEBAR + 18, y + 1, 12, 5, rgb.subtext, 0.5);
 
     for (const [col, len, role] of tokens) {
@@ -112,7 +112,7 @@ export function render(flavor) {
     }
   });
 
-  // Cursor sobre la línea activa.
+  // Cursor on the active line.
   const cursorY = top + 6 * LH;
   fill(SIDEBAR + 1, cursorY - 4, W - SIDEBAR - 1, LH, rgb.bgAlt, 0.5);
   fill(left + 34 * CH, cursorY - 2, 2, BAR + 4, rgb.keyword);

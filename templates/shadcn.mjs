@@ -1,22 +1,22 @@
 /**
- * CSS listo para consumir desde el portfolio (Tailwind v4 + shadcn).
+ * CSS ready to consume from the portfolio (Tailwind v4 + shadcn).
  *
- * Un solo archivo con los seis flavors, porque el sitio los carga todos y
- * cambia entre ellos en el cliente. Emite dos capas:
+ * A single file with all six flavors, because the site loads them all and
+ * switches between them on the client. It emits two layers:
  *
- *  · --sh-*  los tokens crudos, por si un componente quiere el color exacto
- *            (el keyword del flavor, el string, el disco del logo…).
- *  · las variables que shadcn/ui ya espera, mapeadas desde esos tokens.
+ *  · --sh-*  the raw tokens, in case a component wants the exact color
+ *            (the flavor's keyword, the string, the logo's disk…).
+ *  · the variables shadcn/ui already expects, mapped from those tokens.
  *
- * También emite el @custom-variant de Tailwind, para que `dark:` siga
- * funcionando: se activa con cualquiera de los flavors oscuros.
+ * It also emits Tailwind's @custom-variant, so `dark:` keeps working:
+ * it turns on with any of the dark flavors.
  */
 export const single = true;
 export const extension = "css";
 export const outDir = "css";
 export const filename = "spacehole-shadcn.css";
 
-/** tokens de Spacehole → variables que shadcn/ui ya usa. */
+/** Spacehole tokens → variables shadcn/ui already uses. */
 function shadcnVars(c) {
   return {
     background: c.bg,
@@ -31,10 +31,10 @@ function shadcnVars(c) {
     "secondary-foreground": c.fg,
     muted: c.bgAlt,
     "muted-foreground": c.muted,
-    // Ojo: shadcn usa `accent` como fondo de hover, pero este portfolio lo
-    // usa como color de marca visible (`text-accent` en títulos, `bg-accent`
-    // en el indicador de disponibilidad) — igual que hacía con su copper.
-    // Se respeta ese uso: mandan los componentes que ya existen.
+    // Careful: shadcn uses `accent` as a hover background, but this portfolio
+    // uses it as a visible brand color (`text-accent` in headings, `bg-accent`
+    // in the availability indicator) — same as it did with its copper.
+    // That usage is kept: the existing components win.
     accent: c.keyword,
     "accent-foreground": c.bg,
     destructive: c.error,
@@ -77,15 +77,15 @@ export function render(flavors, tokens) {
       .map(([k, v]) => `  --${k}: ${v};`)
       .join("\n");
 
-    // Un flavor se duplica en :root para que el documento tenga color válido
-    // en el instante antes de que el cliente aplique el suyo. Es el fallback
-    // del sitio (tokens.rootFlavor), no necesariamente el flavor de marca.
+    // One flavor is duplicated on :root so the document has a valid color in
+    // the instant before the client applies its own. It's the site's fallback
+    // (tokens.rootFlavor), not necessarily the brand flavor.
     //
-    // Va envuelto en :where() para que su especificidad sea cero. Sin eso,
-    // `:root` empata con `[data-theme="x"]` y gana el que aparezca después en
-    // el archivo: los flavors declarados ANTES del fallback quedaban mudos al
-    // seleccionarlos, y los declarados después funcionaban. El síntoma es
-    // desconcertante — "solo algunos themes responden" — y depende del orden.
+    // It's wrapped in :where() so its specificity is zero. Without that,
+    // `:root` ties with `[data-theme="x"]` and whichever comes later in the
+    // file wins: flavors declared BEFORE the fallback did nothing when
+    // selected, while the ones declared after worked. The symptom is
+    // confusing — "only some themes respond" — and depends on the order.
     const isRoot = (tokens.rootFlavor ?? flavors.find((f) => f.primary)?.slug) === flavor.slug;
     const selector = isRoot
       ? `:where(:root),\n[data-theme="${flavor.slug}"]`
@@ -101,10 +101,10 @@ ${mapped}
 }`;
   });
 
-  // `dark:` de Tailwind se activa con cualquier flavor oscuro.
+  // Tailwind's `dark:` turns on with any dark flavor.
   const darkSelector = dark.map((f) => `[data-theme="${f.slug}"] *`).join(", ");
 
-  // Shiki emite una variable por theme; aquí se elige la del flavor activo.
+  // Shiki emits one variable per theme; this picks the active flavor's.
   const shiki = flavors
     .map(
       (f) => `[data-theme="${f.slug}"] .shiki,
@@ -115,7 +115,7 @@ ${mapped}
     )
     .join("\n");
 
-  return `/* ${tokens.name} — generado desde palette/tokens.json. No editar a mano.
+  return `/* ${tokens.name} — generated from palette/tokens.json. Do not edit by hand.
    ${tokens.homepage} */
 
 @custom-variant dark (&:is(${darkSelector}));
@@ -123,9 +123,9 @@ ${mapped}
 ${blocks.join("\n\n")}
 
 /* ── Shiki multi-theme ──────────────────────────────────────
-   El HTML se resalta una sola vez en el servidor con los seis themes;
-   cada bloque lleva una variable por flavor y aquí se activa la del
-   flavor vigente. Cambiar de theme no re-renderiza nada. */
+   The HTML is highlighted once on the server with all six themes;
+   each block carries one variable per flavor, and this enables the
+   active flavor's. Switching themes doesn't re-render anything. */
 ${shiki}
 `;
 }
